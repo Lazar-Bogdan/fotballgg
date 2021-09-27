@@ -12,7 +12,7 @@
 
         <form action="loginService.php" method="GET">
 
-            
+            <p>you re here (register) </p>
 
         </form>
 

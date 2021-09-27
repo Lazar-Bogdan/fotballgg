@@ -4,15 +4,17 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Home</title>
+        <title>Login</title>
     </head>
 
     <body>
 
 
-        <form action="" method="POST">
+        <form action="loginService.php" method="GET">
 
-            <p>you re here</p>
+            <input type="Text" name="username">
+            <input type="Text" name="password">
+            <button type="submit" name="confirm">Confirm</button>
 
         </form>
 
