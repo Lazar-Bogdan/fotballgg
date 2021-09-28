@@ -1,6 +1,6 @@
 <?php
 
-    
+    include '../staticVariables/staticVariables.php';
 
     $connect = new mysqli('localhost', 'root','', 'user_database') or die("unable to connect");
 
@@ -20,7 +20,7 @@
     $rowPassword = mysqli_num_rows($findPassword);
 
     if($rowUsername!=0 && $rowPassword!=0){
-        echo "s a gasit";
+        header("Location:../mainPages/mainPageOfSesons.php");
     }else{
         echo "nu s a gasit";
     }

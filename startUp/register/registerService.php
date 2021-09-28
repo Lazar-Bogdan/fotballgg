@@ -26,7 +26,7 @@
 
                 $query=mysqli_query($connect,$mysql);
 
-                echo "S a adaugat";
+                header("Location:../mainPages/mainPageOfSesons.php");
             }else{
                 echo "nu s a adaugat";
             }
