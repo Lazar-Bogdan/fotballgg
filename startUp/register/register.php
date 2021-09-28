@@ -16,6 +16,7 @@
             <input type="text" name="password">
             <input type="text" name="gmail">
             <button type="submit" name="register">register</button>
+            <button type="submit" name="login">Go To Login</button>
 
         </form>
 

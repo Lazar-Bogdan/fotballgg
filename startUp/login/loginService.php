@@ -7,18 +7,31 @@
     $username = $_GET['username'];
     $password = $_GET['password'];
 
-    $rezUsername = sprintf("SELECT name FROM users 
-        WHERE name = '%s'",
-        mysqli_real_escape_string($connect,$username));
+    $password = substr($username,1).$password;
 
-    $rezPassword = sprintf("SELECT name FROM users 
-        WHERE parola = '%s'",
-        mysqli_real_escape_string($connect,$password));
+    $varUsername = "SELECT nume FROM users WHERE nume='$username'";
+    $varPassword = "SELECT parola FROM users WHERE parola='$password'";
 
-    if(!$rezUsername && !$rezPassword){
+
+    $findUsername = mysqli_query($connect,$varUsername);
+    $findPassword = mysqli_query($connect,$varPassword);
+
+    $rowUsername = mysqli_num_rows($findUsername);
+    $rowPassword = mysqli_num_rows($findPassword);
+
+    if($rowUsername!=0 && $rowPassword!=0){
         echo "s a gasit";
     }else{
         echo "nu s a gasit";
+    }
+
+
+?>
+
+<?php
+
+    if(isset($_GET['register'])){
+        header("Location:../register/register.php");
     }
 
 ?>
