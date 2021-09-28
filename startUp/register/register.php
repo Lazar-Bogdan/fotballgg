@@ -4,15 +4,18 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Home</title>
+        <title>Register</title>
     </head>
 
     <body>
 
 
-        <form action="loginService.php" method="GET">
+        <form action="registerService.php" method="POST">
 
-            <p>you re here (register) </p>
+            <input type="text" name="username">
+            <input type="text" name="password">
+            <input type="text" name="gmail">
+            <button type="submit" name="register">register</button>
 
         </form>
 
