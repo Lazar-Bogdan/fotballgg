@@ -11,10 +11,9 @@
     $ties=$_POST['ties'];
     $goals=$_POST['goals'];
     $points=$_POST['points'];
-    $positions=4;
 
     if(isset($_POST['confirm'])){
-        $mysql = "insert into teams (nameSeason,teamName,matches,wins,loses,ties,goals,points,position) values ('$nameSeason','$teamName','$matches','$wins','$loses','$ties','$goals','$points', '$positions') ";
+        $mysql = "insert into teams (nameSeason,teamName,matches,wins,loses,ties,goals,points) values ('$nameSeason','$teamName','$matches','$wins','$loses','$ties','$goals','$points') ";
         $query=mysqli_query($connect,$mysql);
         header("Location:dashboard.php");
     }
