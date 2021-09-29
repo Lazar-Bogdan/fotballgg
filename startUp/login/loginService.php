@@ -1,6 +1,7 @@
 <?php
 
     include '../staticVariables/staticVariables.php';
+    
 
     $connect = new mysqli('localhost', 'root','', 'user_database') or die("unable to connect");
 
@@ -18,6 +19,13 @@
 
     $rowUsername = mysqli_num_rows($findUsername);
     $rowPassword = mysqli_num_rows($findPassword);
+
+    $result = mysqli_query($connect,"SELECT nume,functie FROM users WHERE nume='$username'");
+
+    $row=mysqli_fetch_row($result);
+
+    $userStatus=$row[1];
+    #echo $userStatus;
 
     if($rowUsername!=0 && $rowPassword!=0){
         header("Location:../mainPages/mainPageOfSesons.php");

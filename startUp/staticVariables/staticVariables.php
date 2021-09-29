@@ -1,7 +1,9 @@
 <?php
 
 
-    STATIC $userStatus="";
+    STATIC $userStatus;
 
+
+    
 
 ?>

@@ -57,7 +57,17 @@
 
         <form action="mainPageofSesonsService.php" method="POST">
 
-            <button type="submit" name="dashboard">dashboard</button>
+            <?php
+                include '../staticVariables/staticVariables.php';
+                
+                echo "$userStatus";
+
+                if($userStatus != "user"){
+                    echo '<button type="submit" name="dashboard" >dashboard1</button>';
+                }
+                
+
+            ?>
 
         </form>
 
