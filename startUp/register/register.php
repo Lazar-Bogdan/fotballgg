@@ -12,9 +12,9 @@
 
         <form action="registerService.php" method="POST">
 
-            <input type="text" name="username">
-            <input type="text" name="password">
-            <input type="text" name="gmail">
+            <input type="text" placeholder="username" name="username">
+            <input type="text" placeholder="password" name="password">
+            <input type="text" placeholder="gmail" name="gmail">
             <button type="submit" name="register">register</button>
             <button type="submit" name="login">Go To Login</button>
 

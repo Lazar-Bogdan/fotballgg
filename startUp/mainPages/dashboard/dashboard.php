@@ -83,14 +83,14 @@
 
             <p> Welcome ! </p>
             <input type="hidden" name="position" value="<?php echo $position; ?>">
-            <input type="text" value="<?php echo $nameSeason?>" name="nameSeason">
-            <input type="text" value="<?php echo $teamName?>" name="teamName">
-            <input type="text" value="<?php echo $matches?>" name="matches">
-            <input type="text" value="<?php echo $wins?>" name="wins">
-            <input type="text" value="<?php echo $loses?>" name="loses">
-            <input type="text" value="<?php echo $ties?>" name="ties">
-            <input type="text" value="<?php echo $goals?>" name="goals">
-            <input type="text" value="<?php echo $points?>" name="points">
+            <input type="text" value="<?php echo $nameSeason?>" placeholder="Season Name" name="nameSeason">
+            <input type="text" value="<?php echo $teamName?>" placeholder="Team Name" name="teamName">
+            <input type="text" value="<?php echo $matches?>" placeholder="Matches" name="matches">
+            <input type="text" value="<?php echo $wins?>" placeholder="Wins" name="wins">
+            <input type="text" value="<?php echo $loses?>" placeholder="Loses" name="loses">
+            <input type="text" value="<?php echo $ties?>" placeholder="Ties" name="ties">
+            <input type="text" value="<?php echo $goals?>" placeholder="Goals" name="goals">
+            <input type="text" value="<?php echo $points?>" placeholder="Points" name="points">
             <?php
                 if($update==true):
             ?>
@@ -100,7 +100,7 @@
             <?php endif;?>
             
 
-            
+            <button type="submit" name="goBack">Go Back</button>
 
 
         </form>

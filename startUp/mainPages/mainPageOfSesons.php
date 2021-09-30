@@ -17,7 +17,7 @@
                 <details class="details-example">
                     <summary>Italia</summary>
                     <ul>
-                        <li><a href="">SERIE A</a></li>
+                        <li><a href="Seasons/SERIEA.php">SERIE A</a></li>
                         <li>SERIE B</li>
                     </ul>
                 </details>

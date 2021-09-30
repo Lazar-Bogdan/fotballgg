@@ -12,8 +12,8 @@
 
         <form action="loginService.php" method="GET">
 
-            <input type="Text" name="username">
-            <input type="Text" name="password">
+            <input type="Text" placeholder="username" name="username">
+            <input type="Text" placeholder="password" name="password">
             <button type="submit" name="confirm">Confirm</button>
             <button type="submit" name="register">Go To Register</button>
 
