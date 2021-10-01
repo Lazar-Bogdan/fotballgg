@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     include '../staticVariables/staticVariables.php';
     
 
@@ -25,9 +27,9 @@
     $row=mysqli_fetch_row($result);
 
     $userStatus=$row[1];
-    #echo $userStatus;
 
     if($rowUsername!=0 && $rowPassword!=0){
+        $_SESSION['username']=$username;
         header("Location:../mainPages/mainPageOfSesons.php");
     }else{
         echo "nu s a gasit";

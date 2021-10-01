@@ -1,7 +1,5 @@
 <?php
-
     session_start();
-
     $connect = new mysqli('localhost','root','','user_database') or die("unable to connect");
     #$update=true;
 
