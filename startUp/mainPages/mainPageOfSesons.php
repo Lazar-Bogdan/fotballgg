@@ -77,6 +77,15 @@
 
             ?>
 
+            <div class="custom-select" style="width:200px;">
+                <select>
+                    <option value="0"><?php echo $_SESSION['username'];?></option>
+                    <option value="1">You're profile</option>
+                    <option value="2">Settings</option>
+
+                </select>
+            </div>
+
             <button type="submit" name="logout">Log out</button>
 
         </form>
