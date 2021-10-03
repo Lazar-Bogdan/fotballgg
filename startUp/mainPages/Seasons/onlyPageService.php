@@ -9,10 +9,14 @@
     }
 
     if(isset($_POST['comment'])){
+        
         $username = $_SESSION['username'];
         $comment = $_POST['addComment'];
         $season = $_SESSION['nameSeason'];
-        $mysqli->query("INSERT into comments (unsername,comment,season) values ('$username','$comment','$season')");
+        echo $username;
+        echo $comment;
+        echo $season;
+        $mysqli->query("INSERT into comments (username,comment,season) values ('$username','$comment','$season')");
         header("location:onlyPageOfSeasons.php");
     }
 
