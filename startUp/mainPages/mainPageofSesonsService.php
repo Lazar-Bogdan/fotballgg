@@ -1,15 +1,7 @@
 <?php
     session_start();
 
-    if(isset($_POST['dashboard'])){
-        header("Location:dashboard/dashboard.php");
-    }
-
-    if(isset($_POST['logout'])){
-        session_destroy();
-        header("location:../index.php");
-    }
-
+    mainPageButtons();
     callingSeasons();
 
 ?>
@@ -57,6 +49,24 @@
         if(isset($_POST['segundaDivision'])){
             $_SESSION['nameSeason']="Segunda Division";
             header("location:Seasons/onlyPageOfSeasons.php");
+        }
+    }
+
+
+    function mainPageButtons(){
+        if(isset($_POST['dashboard'])){
+            header("Location:dashboard/dashboard.php");
+        }
+    
+        if(isset($_POST['logout'])){
+            session_destroy();
+            header("location:../index.php");
+        }
+        if(isset($_POST['profile'])){
+            header("location:profile/profile.php");
+        }
+        if(isset($_POST['settings'])){
+            header("location:profile/settings.php");
         }
     }
 

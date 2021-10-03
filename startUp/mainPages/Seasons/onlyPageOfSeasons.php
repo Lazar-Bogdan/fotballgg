@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="onlyPageStyle.css">
     </head>
 
+    <link rel="stylesheet" href="onlyPageStyle.css">
 
     <body>
         <?php
@@ -64,7 +65,7 @@
 
                 <div class="column">
                     
-                    <table class="table">
+                    <table class="table-comments">
                         <thead>
                             <tr>
                                 <th></th>

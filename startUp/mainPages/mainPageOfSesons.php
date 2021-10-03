@@ -14,7 +14,7 @@
            
         
         ?>
-
+        <link rel="stylesheet" href="mainPageOfSesonstyle.css">
         <form action="mainPageofSesonsService.php" method="POST">
             <h1 id="test" >These are our season</h1>
             <div id="content" class="cointer__season">
@@ -77,14 +77,8 @@
 
             ?>
 
-            <div class="custom-select" style="width:200px;">
-                <select>
-                    <option value="0"><?php echo $_SESSION['username'];?></option>
-                    <option value="1">You're profile</option>
-                    <option value="2">Settings</option>
-
-                </select>
-            </div>
+            <button type="submit" name="profile">You re profile</button>
+            <button type="submit" name="settings">Settings</button>
 
             <button type="submit" name="logout">Log out</button>
 

@@ -1,10 +1,12 @@
 <?php
 
     $connect = new mysqli('localhost','root','','user_database') or die("unable to connect");
-
+    $name = $_POST['name'];
     $username = $_POST['username'];
     $password = $_POST['password'];
     $gmail = $_POST['gmail'];
+    $country=$_POST['country'];
+    $state=$_POST['state'];
     $functie = "user";
 
     if(isset($_POST['register'])){
@@ -21,7 +23,7 @@
             $row = mysqli_num_rows($findOrNot);
 
             if($row == 0){
-                $mysql = "insert into users (nume,parola,gmail,functie) values ('$username','$password','$gmail','$functie') ";
+                $mysql = "insert into users (nume,parola,gmail,functie,country,state,username) values ('$name','$password','$gmail','$functie','$country','$state','$username') ";
 
 
                 $query=mysqli_query($connect,$mysql);
