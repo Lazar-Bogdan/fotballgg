@@ -15,6 +15,10 @@
                 <p id="register-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
             </div>
 
+            <div id="welcome-text">
+                Welcome!
+            </div>
+
             <form action="registerService.php" method="POST" id="register-form">
                 <div class="register-label">
                     <input type="text" placeholder="name" name="name">

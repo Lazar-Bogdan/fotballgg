@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $_SESSION['loggedUser']=false;
 
     mainPageButtons();
     callingSeasons();
@@ -60,13 +61,16 @@
     
         if(isset($_POST['logout'])){
             session_destroy();
-            header("location:../index.php");
+            header("location:mainPageOfSesons.php");
         }
         if(isset($_POST['profile'])){
             header("location:profile/profile.php");
         }
         if(isset($_POST['settings'])){
             header("location:profile/settings.php");
+        }
+        if(isset($_POST['signUp'])){
+            header("location:../login/login.php");
         }
     }
 

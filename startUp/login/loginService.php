@@ -12,7 +12,7 @@
 
     $password = substr($username,1).$password;
 
-    $varUsername = "SELECT nume FROM users WHERE nume='$username'";
+    $varUsername = "SELECT nume FROM users WHERE username='$username'";
     $varPassword = "SELECT parola FROM users WHERE parola='$password'";
 
 
@@ -30,6 +30,7 @@
 
     if($rowUsername!=0 && $rowPassword!=0){
         $_SESSION['username']=$username;
+        $_SESSION['loggedUser']=true;
         header("Location:../mainPages/mainPageOfSesons.php");
     }else{
         echo "nu s a gasit";

@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     $connect = new mysqli('localhost','root','','user_database') or die("unable to connect");
     $name = $_POST['name'];
     $username = $_POST['username'];
@@ -12,7 +14,7 @@
     if(isset($_POST['register'])){
         if(!is_null($username) && !is_null($password)){
 
-            $var = "SELECT nume FROM users WHERE nume = '$username'";
+            $var = "SELECT nume FROM users WHERE username = '$username'";
 
             $test = substr($username,1);
             
@@ -21,6 +23,8 @@
             $findOrNot = mysqli_query($connect,$var);
 
             $row = mysqli_num_rows($findOrNot);
+            $_SESSION['loggedUser']=false;
+            $_SESSION['username']=$username;
 
             if($row == 0){
                 $mysql = "insert into users (nume,parola,gmail,functie,country,state,username) values ('$name','$password','$gmail','$functie','$country','$state','$username') ";
