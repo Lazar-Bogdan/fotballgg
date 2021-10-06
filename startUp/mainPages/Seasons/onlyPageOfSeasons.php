@@ -160,6 +160,21 @@
                 .row{
                     height: 600px;
                 }
+                button {
+                    background: url('http://imgur.com/I0EwG.png') transparent;
+                    border: none;
+                    margin: 0;
+                    padding: 0;
+                    background: transparent;
+                }
+                .favorite-star-character{
+                    color: #ccd6dd;
+                    cursor: pointer;
+                    display: inline-block;
+                }
+
+                
+
             </style>
             <p> WELCOME to <?php echo $_SESSION['nameSeason'] ?> </p>
             <div class="row">
@@ -167,14 +182,15 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>nameSeason</th>
-                                <th>teamName</th>
+                                <th>Season</th>
+                                <th>Name</th>
                                 <th>matches</th>
                                 <th>wins</th>
                                 <th>loses</th>
                                 <th>ties</th>
                                 <th>goals</th>
                                 <th>points</th>
+                                <th>favorite</th>
                             </tr>
                         </thead>
                     <?php
@@ -193,6 +209,11 @@
                             <td><?php echo $row['ties']; ?></td>
                             <td><?php echo $row['goals']; ?></td>
                             <td><?php echo $row['points']; ?></td>
+                            <td>
+
+                                
+
+                            </td>
                         </tr>
                         <?php endwhile; ?>
                     </table>
