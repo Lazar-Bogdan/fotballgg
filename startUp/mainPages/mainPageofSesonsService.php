@@ -1,9 +1,17 @@
 <?php
     session_start();
-    $_SESSION['loggedUser']=false;
+    if($_SESSION['loggedUser']==null){
+        $_SESSION['loggedUser']=false;
+    }
 
     mainPageButtons();
-    callingSeasons();
+    if($_SESSION['loggedUser']==false){
+       # $_SESSION['loggedUser']=false;
+        callingSeasons();
+    }else{
+       # $_SESSION['loggedUser']=true;
+        callingSeasons();
+    }
 
 ?>
 
@@ -13,6 +21,7 @@
     function callingSeasons(){
         if(isset($_POST['seriea'])){
             $_SESSION['nameSeason']="SERIE A";
+            
             header("location:Seasons/onlyPageOfSeasons.php");
         }
         if(isset($_POST['serieb'])){
