@@ -3,11 +3,6 @@
 
     $mysqli=new mysqli('localhost','root','','user_database') or die ("unable to connect");
 
-    if(isset($_POST['goBack'])){
-        unset($_SESSION['nameSeason']);
-        header("location:../mainPageOfSesons.php");
-    }
-
     if(isset($_POST['comment'])){
         
         $username = $_SESSION['username'];

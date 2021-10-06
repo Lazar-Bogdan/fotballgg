@@ -7,7 +7,7 @@
     <head>
         <meta charset="UTF-8">
         <title>SEASON</title>
-        <link rel="stylesheet" href="onlyPageStyle.css">
+        <link rel="stylesheet" type="text/css" href="onlyPageOfSeasons.css">
     </head>
 
     
@@ -20,168 +20,146 @@
         ?>
 
         <style> 
-            .navbar {
+            header {
                 background: #131313;
-                height: 80px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 1.2rem;
-                position: sticky;
-                top: 0;
-                z-index: 999;
+                height: 66px;
             }
 
-            .navbar__container {
-                display: flex;
-                justify-content: space-between;
-                height: 80px;
-                z-index: 1;
-                width: 100%;
-                max-width: 1300px;
-                margin-right: auto;
-                margin-left: auto;
-                padding-right: 50px;
-                padding-left: 50px;
+            header * {
+                color: white;
             }
 
-            #navbar__logo {
-                background-color: #ff8177;
-                background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
-                background-size: 100%;
-                -webkit-background-clip: text;
-                -moz-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                -moz-text-fill-color: transparent;
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-                text-decoration: none;
-                font-size: 2rem;
+            header .logo {
+                float: left;
+                height: inherit;
+                margin-left: 2em;
             }
 
-            .fas fa-futbol {
-                margin-right: 0.5rem;
+            header .logo-text {
+                margin: 9px;
+                font-family: 'Candal', serif;
             }
 
-            .navbar__menu {
-                display: flex;
-                align-items: center;
+            header .logo-text span {
+                color: #05f7ff;
+            }
+
+            header ul {
+                float: right;
+                margin: 0px;
+                padding: 0px;
                 list-style: none;
-                text-align: center;
             }
 
-            .navbar__btn {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 0 1rem;
+            header ul li {
+                float: left;
+                position: relative;
+            }
+
+            header ul li ul {
+                position: absolute;
+                top: 66px;
+                right: 0px;
+                width: 180px;
+                display: none;
+                z-index: 88888;
+            }
+
+            header ul li:hover ul {
+                display: block;
+            }
+
+            header ul li ul li {
                 width: 100%;
             }
 
-            #button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            header ul li ul li a {
+                padding: 10px;
+                background: white;
+                color: #444;
+            }
+
+            header ul li ul li a.logout {
+                color: red;
+            }
+
+            header ul li ul li a:hover {
+                background: #d5d6d6;
+            }
+
+            header ul li a {
+                display: block;
+                padding: 21px;
+                font-size: 1.1em;
                 text-decoration: none;
-                padding: 10px 20px;
-                height: 100%;
-                width: 100%;
-                border: none;
-                outline: none;
-                border-radius: 4px;
-                background: #f77062;
-                color: #fff;
             }
 
-            #button-logout {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-decoration: none;
-                padding: 10px 20px;
-                height: 100%;
-                width: 200%;
-                border: none;
-                outline: none;
-                border-radius: 4px;
-                background: #f77062;
-                color: #fff;
+            header ul li a:hover {
+                background: #006669;
+                transition: 0.5s;
             }
 
-            #buttons {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-decoration: none;
-                padding: 10px 20px;
-                height: 100%;
-                width: 200%;
-                border: none;
-                outline: none;
-                border-radius: 4px;
-                background: #f77062;
-                color: #fff;
+            header .menu-toggle {
+                display: none;
             }
 
-            .content__home{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
+            .page-wrapper {
+                min-height: 100%;
             }
 
-            
+            .page-wrapper a:hover {
+                color: #006669;
+            }
 
         </style>
 
         <form action="onlyPageService.php" method="POST">
-            <nav class="navbar">
-                <div class="navbar__container">
-                    <li class="navar__btn">
-                    <button type="submit" id="buttons" name="goBack">go back</button>
-                    </li>
-                    <a href="../mainPageOfSesons.php" id="navbar__logo"><i class="fas fa-futbol"></i>FOTBALGG</a>
-                    <div class="navbar__toogle" id="mobile-menu">
-                        <span class="bar"></span><span lcass="bar"></span>
-                        <span class="bar"></span>
-                    </div>
-                    <ul class="navbar__menu">
-                        
-                        <li class="navbar__btn">
+        <header>
+                <div class="logo">
+                    <h1 class="logo-text"><span>Fotball</span>GG</h1>
+                </div>
+                <i class="fa fa-bars menu-toggle"></i>
+                <ul class="nav">
+                    <li><a href="../mainPageOfSesons.php">Home</a></li>
+                    <li><a href="../mainPageOfSesons.php">Go Back</a></li>
+                    <li>
                         <?php
-                            include '../staticVariables/staticVariables.php';
                             session_start();
-                            
+                            session_start();
                             $connect=new mysqli('localhost', 'root','', 'user_database') or die("unable to connect");
                             $username = $_SESSION['username'];
-                            
+
                             $rez= mysqli_query($connect, "SELECT functie FROM users WHERE username='$username'");
                             $row = mysqli_fetch_row($rez);
                             $userStatus=$row[0];
                             $userLogged=$_SESSION['loggedUser'];
-                            
                             if($userLogged!=false){
-                                echo '<button id="button" type="submit" name="profile">profile</button>';
-                                echo '<button id="button" type="submit" name="settings">Settings</button>';
-                                echo '<button id="button-logout" type="submit" name="logout">Log out</button>';
-                                if($userStatus != "user"){
-                                    echo '<button id="button" type="submit" name="dashboard" >Dashboard</button>';
-                                }
+                                echo '<a href="#">
+                                        <i class="fa fa-user"></i>
+                                        '.$_SESSION['username'].'
+                                        <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
+                                        </a>
+                                    <ul>';
+                                        if($userStatus=="administrator"){
+                                            echo '<li><a href="dashboard/dashboard.php">Dashboard</a></li>';
+                                        }
+                                        echo '
+                                        <li><a href="../profile/profile.php">Profile</a></li>
+                                        <li><a href="../profile/settings.php">Settings</a></li>
+                                        <li><a href="../deadEnd.php" class="logout">Logout</a></li>
+                                    </ul>';
                             }else{
-                                echo '<button id="button" type="submit" name="signUp">Sing in</button>';
+                                echo '<a href="../login/login.php">Sign in</a>';
                             }
-                        ?>
-                        </li>
-                    </ul>
 
-                </div>
-            </nav>
+                        ?>
+                    </li>
+                </ul>
+            </header>
             <style> 
-            .row{
-                height: 600px;
-            }
+                .row{
+                    height: 600px;
+                }
             </style>
             <p> WELCOME to <?php echo $_SESSION['nameSeason'] ?> </p>
             <div class="row">

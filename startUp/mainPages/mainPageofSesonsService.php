@@ -67,11 +67,6 @@
         if(isset($_POST['dashboard'])){
             header("Location:dashboard/dashboard.php");
         }
-    
-        if(isset($_POST['logout'])){
-            session_destroy();
-            header("location:mainPageOfSesons.php");
-        }
         if(isset($_POST['profile'])){
             header("location:profile/profile.php");
         }

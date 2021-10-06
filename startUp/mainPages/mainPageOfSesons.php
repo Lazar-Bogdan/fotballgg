@@ -5,104 +5,63 @@
     <head>
         <meta charset="UTF-8">
         <title>MainPageOfSeasons</title>
+        <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
     </head>
 
     <body>
         <link rel="stylesheet" type="text/css" href="mainPageOfSesonstyle.css">
         <?php 
             session_start();
-           
-        
         ?>
         
 
         <form action="mainPageofSesonsService.php" method="POST">
 
-            <style>
-                #button-profile{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    text-decoration: none;
-                    padding: 10px 20px;
-                    height: 100%;
-                    width: 100%;
-                    border: none;
-                    outline: none;
-                    border-radius: 4px;
-                    background: #f77062;
-                    color: #fff;
-                }
-                #button-logout{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    text-decoration: none;
-                    padding: 10px 20px;
-                    height: 100%;
-                    width: 400%;
-                    border: none;
-                    outline: none;
-                    border-radius: 4px;
-                    background: #f77062;
-                    color: #fff;
-                }
-
-                .navbar__btn {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    padding: 0 1rem;
-                    width: 1000%;
-                }
-
-            </style>
-            
-            <nav class="navbar">
-                <div class="navbar__container">
-                    <a href="mainPageOfSesons.php" id="navbar__logo"><i class="fas fa-futbol"></i>FOTBALGG</a>
-                    <div class="navbar__toogle" id="mobile-menu">
-                        <span class="bar"></span><span lcass="bar"></span>
-                        <span class="bar"></span>
-                    </div>
-                    <ul class="navbar__menu">
-                        
-                        <li class="navbar__btn">
-                            <?php
-                                include '../staticVariables/staticVariables.php';
-                                session_start();
-                                $connect=new mysqli('localhost', 'root','', 'user_database') or die("unable to connect");
-                                $username = $_SESSION['username'];
-
-                                $rez= mysqli_query($connect, "SELECT functie FROM users WHERE username='$username'");
-                                $row = mysqli_fetch_row($rez);
-                                $userStatus=$row[0];
-                                $userLogged=$_SESSION['loggedUser'];
-
-                                if($userLogged!=false){
-                                    echo '<div class="dropdown>';
-                                        echo 'button class="dropbtn">test</button>';
-                                        echo '<div class="dropdown-content">';
-                                            echo '<button id="button" type="submit" name="profile">profile</button>';
-                                            echo '<button id="button" type="submit" name="settings">Settings</button>';
-                                            echo '<button id="button" type="submit" name="logout">Log out</button>';
-                                        echo '</div>';
-                                    echo '</div>';
-                                    
-
-                                    if($userStatus != "user"){
-                                        echo '<button id="button" type="submit" name="dashboard" >Dashboard</button>';
-                                    }
-                                }else{
-                                    echo '<button id="button" type="submit" name="signUp">Sing in</button>';
-                                }
-                            ?>
-                        </li>
-                    </ul>
-
+            <header>
+                <div class="logo">
+                    <h1 class="logo-text"><span>Fotball</span>GG</h1>
                 </div>
-            </nav>
+                <i class="fa fa-bars menu-toggle"></i>
+                <ul class="nav">
+                    <li><a href="/mainPageOfSesons.php">Home</a></li>
+                    <li>
+                        <?php
+                            session_start();
+                            $connect=new mysqli('localhost', 'root','', 'user_database') or die("unable to connect");
+                            $username = $_SESSION['username'];
 
+                            $rez= mysqli_query($connect, "SELECT functie FROM users WHERE username='$username'");
+                            $row = mysqli_fetch_row($rez);
+                            $userStatus=$row[0];
+                            $userLogged=$_SESSION['loggedUser'];
+                            if($userLogged!=false){
+                                echo '<a href="#">
+                                        <i class="fa fa-user"></i>
+                                        '.$_SESSION['username'].'
+                                        <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
+                                        </a>
+                                    <ul>';
+                                        if($userStatus=="administrator"){
+                                            echo '<li><a href="dashboard/dashboard.php">Dashboard</a></li>';
+                                        }
+                                        echo '
+                                        <li><a href="profile/profile.php">Profile</a></li>
+                                        <li><a href="profile/settings.php">Settings</a></li>
+                                        <li><a href="deadEnd.php" class="logout">Logout</a></li>
+                                    </ul>';
+                            }else{
+                                echo '<a href="../login/login.php">Sign in</a>';
+                            }
+
+                        ?>
+                    </li>
+                </ul>
+            </header>
             
             <div class="content__home">
                 <h1 id="test" >These are our season</h1>
@@ -171,7 +130,7 @@
                 <section class="social__media">
                     <div class="social__media--wrap">
                         <div class="footer__logo">
-                            <a href="mainPageOfSeasons.php" id="footer__logo"><i class="fas fa-futbol"></i>FOTBALGG</a>
+                            <a href="mainPageOfSesons.php" id="footer__logo"><i class="fas fa-futbol"></i>FOTBALGG</a>
                         </div>
                         <p class="website__rights">© FOTBALGG 2021. All rights reserved</p>
                         <div class="social__icons">
