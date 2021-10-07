@@ -155,24 +155,26 @@
                         ?>
                     </li>
                 </ul>
-            </header>
+        </header>
             <style> 
-                .row{
-                    height: 600px;
-                }
-                button {
-                    background: url('http://imgur.com/I0EwG.png') transparent;
-                    border: none;
-                    margin: 0;
-                    padding: 0;
-                    background: transparent;
-                }
-                .favorite-star-character{
-                    color: #ccd6dd;
-                    cursor: pointer;
-                    display: inline-block;
+                * {
+                    box-sizing: border-box;
                 }
 
+                /* Create two equal columns that floats next to each other */
+                .column {
+                    float: left;
+                    width: 50%;
+                    padding: 10px;
+                    height: 100px; /* Should be removed. Only for demonstration */
+                }
+
+                /* Clear floats after the columns */
+                .row:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
                 
 
             </style>
@@ -193,13 +195,13 @@
                                 <th>favorite</th>
                             </tr>
                         </thead>
-                    <?php
-                        $connect = new mysqli('localhost','root','','user_database') or die ("unable to connect");
-                        $seasonName = $_SESSION['nameSeason'];
-                        echo $seasonName;
-                        $result = mysqli_query($connect,"SELECT * from teams WHERE nameSeason='$seasonName'");
-                        while($row = $result->fetch_assoc()) :
-                    ?>
+                        <?php
+                            $connect = new mysqli('localhost','root','','user_database') or die ("unable to connect");
+                            $seasonName = $_SESSION['nameSeason'];
+                            echo $seasonName;
+                            $result = mysqli_query($connect,"SELECT * from teams WHERE nameSeason='$seasonName'");
+                            while($row = $result->fetch_assoc()) :
+                        ?>
                         <tr>
                             <td><?php echo $row['nameSeason']; ?></td>
                             <td><?php echo $row['teamName']; ?></td>
@@ -218,14 +220,14 @@
                         <?php endwhile; ?>
                     </table>
                 </div>
-                
-
                 <div class="column">
-                    
                     <style> 
 
                         @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
-
+                        .column container {
+                            width: 400px;
+                            padding: 10px;
+                        }
                         .container {
                             width: 400px;
                             padding: 10px;
@@ -290,8 +292,6 @@
                         echo '<button type="submit" class="button-comment" name="comment">Comment</button>';
 
                     ?> 
-
-
                 </div>
             </div>
                     
