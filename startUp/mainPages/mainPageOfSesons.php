@@ -15,9 +15,6 @@
 
     <body>
         <link rel="stylesheet" type="text/css" href="mainPageOfSesonstyle.css">
-        <?php 
-            session_start();
-        ?>
         
 
         <form action="mainPageofSesonsService.php" method="POST">
@@ -28,7 +25,7 @@
                 </div>
                 <i class="fa fa-bars menu-toggle"></i>
                 <ul class="nav">
-                    <li><a href="/mainPageOfSesons.php">Home</a></li>
+                    <li><a href="mainPageOfSesons.php">Home</a></li>
                     <li>
                         <?php
                             session_start();

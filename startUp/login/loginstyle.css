@@ -9,6 +9,7 @@ body{
     display: grid;
     justify-items: center;
     background-color: #3a3a3a;
+    
 }
 
 #login-error-msg-holder {
@@ -37,17 +38,21 @@ body{
     display: grid;
     justify-items: center;
     align-items: center;
+    
 }
 
 #main-holder{
     width: 50%;
-    height: 70%;
+    height: 711110%;
     display: grid;
     justify-items: center;
     align-items: center;
     background-color: white;
     border-radius: 7px;
     box-shadow: 0px 0px 5px 2px black;
+    position: fixed;
+    top: 10%;
+    left: 10%;
 }
 
 .login-label{
@@ -55,6 +60,7 @@ body{
     display: grid;
     justify-items: center;
     align-items: center;
+    
 }
 
 .button-style{

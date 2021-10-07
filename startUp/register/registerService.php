@@ -23,7 +23,7 @@
             $findOrNot = mysqli_query($connect,$var);
 
             $row = mysqli_num_rows($findOrNot);
-            $_SESSION['loggedUser']=false;
+            $_SESSION['loggedUser']=true;
             $_SESSION['username']=$username;
 
             if($row == 0){

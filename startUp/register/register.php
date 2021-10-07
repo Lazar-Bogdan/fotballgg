@@ -21,12 +21,19 @@
 
             <form action="registerService.php" method="POST" id="register-form">
                 <div class="register-label">
+                    <p>Name:</p>
                     <input type="text" placeholder="name" name="name">
+                    <p>Username:</p>
                     <input type="text" placeholder="username" name="username">
-                    <input type="text" placeholder="password" name="password">
+                    <p>Password:</p>
+                    <input type="password" placeholder="password" name="password">
+                    <p>Gmail:</p>
                     <input type="text" placeholder="gmail" name="gmail">
+                    <p>Country:</p>
                     <input type="text" placeholder="country" name="country">
+                    <p>State:</p>
                     <input type="text" placeholder="state" name="state">
+
                 </div>
                 <p></p>
                 <button type="submit" name="register" class="button-style">register</button>
