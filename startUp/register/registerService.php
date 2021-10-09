@@ -18,7 +18,8 @@
 
             $test = substr($username,1);
             
-            $password = $test.$password;
+            $hash = "$2y$10ZmQmueJLOe9bDZWhTR0BlOBgJwngffKqyuE9gDvtSbYuqYZ0ztsB2";
+            $password = $hash.$password;
 
             $findOrNot = mysqli_query($connect,$var);
 

@@ -12,7 +12,8 @@
             $_SESSION['loginmessage']="Fields are empty";
             header("Location: login.php");
         } 
-        $password = substr($username,1).$password;
+        $hash = "$2y$10ZmQmueJLOe9bDZWhTR0BlOBgJwngffKqyuE9gDvtSbYuqYZ0ztsB2";
+        $password = $hash.$password;
 
         $result = mysqli_query($connect,"SELECT nume,parola FROM users WHERE username='$username'");
 
