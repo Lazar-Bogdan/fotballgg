@@ -146,7 +146,7 @@
                                         </a>
                                     <ul>';
                                         if($userStatus=="administrator"){
-                                            echo '<li><a href="dashboard/dashboard.php">Dashboard</a></li>';
+                                            echo '<li><a href="../dashboard/dashboard.php">Dashboard</a></li>';
                                         }
                                         echo '
                                         <li><a href="../profile/profile.php">Profile</a></li>
@@ -279,6 +279,7 @@
                     <?php
                         $mysqli=new mysqli('localhost','root','','user_database') or die ("unable to connect");
                         $season = $_SESSION['nameSeason'];
+                        $username=$_SESSION['username'];
                         $result = $mysqli->query("SELECT username,comment FROM comments WHERE season='$season'");
                         echo '<div class="scrollit"';
                         echo '<table class="table-comment">';
@@ -293,9 +294,14 @@
                         }
                         echo "</table>";
                         echo "</div>";
-                        echo '<input type="text" name="addComment" class="commentSection" placeholder="add comment">';
-                        echo '<button type="submit" class="button-comment" name="comment">Comment</button>';
-
+                        $result=mysqli_query($mysqli,"SELECT * from users WHERE username='$username'");
+                        $row = $result->fetch_assoc();
+                        if($row['functie']=="user" || $row['functie']=="administrator"){
+                            echo '<input type="text" name="addComment" class="commentSection" placeholder="add comment">';
+                            echo '<button type="submit" class="button-comment" name="comment">Comment</button>';
+                        }else{
+                            echo 'For adding a comment, please register/login';
+                        }
                     ?> 
                 </div>
             </div>

@@ -277,6 +277,9 @@
                 .title {
                     color: grey;
                 }
+                .credentials{
+                    text-align: left;
+                }
         </style>
 
         <form action="settingsService.php" method="POST">
@@ -306,7 +309,7 @@
                                             </a>
                                         <ul>';
                                             if($userStatus=="administrator"){
-                                                echo '<li><a href="dashboard/dashboard.php">Dashboard</a></li>';
+                                                echo '<li><a href="../dashboard/dashboard.php">Dashboard</a></li>';
                                             }
                                             echo '
                                             <li><a href="../profile/profile.php">Profile</a></li>
@@ -339,14 +342,16 @@
                             <h1></h1>
                             <h2><?php echo $row['username']?></h2>
                             <p class="title"><?php echo $row['functie'];?></p>
-                            <p>Name:</p>
-                            <input type="label" placeholder="name" name="name">
-                            <p>Country:</p>
-                            <input type="label" placeholder="country" name="Country">
-                            <p>State:</p>
-                            <input type="label" placeholder="state" name="State">
-                            <p>Gmail:</p>
-                            <input type="label" placeholder="gmail" name="Gmail">
+                            <div class="credentials">
+                                Name:
+                                <input type="label" placeholder="name" name="name"><br>
+                                Country:
+                                <input type="label" placeholder="country" name="Country"><br>
+                                State:
+                                <input type="label" placeholder="state" name="State"><br>
+                                Gmail:
+                                <input type="label" placeholder="gmail" name="Gmail"><br>
+                            </div>
                             <p></p>
                             <button type="submit" name="confirm">Confirm</button>
                             <p></p>

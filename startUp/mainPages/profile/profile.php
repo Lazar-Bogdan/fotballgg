@@ -142,7 +142,7 @@
                                             </a>
                                         <ul>';
                                             if($userStatus=="administrator"){
-                                                echo '<li><a href="dashboard/dashboard.php">Dashboard</a></li>';
+                                                echo '<li><a href="../dashboard/dashboard.php">Dashboard</a></li>';
                                             }
                                             echo '
                                             <li><a href="../profile/profile.php">Profile</a></li>
@@ -181,6 +181,9 @@
                 .container {
                     padding: 0 16px;
                 }
+                .credentials{
+                    text-align: left;
+                }
 
                 .container::after, .row::after {
                     content: "";
@@ -210,10 +213,12 @@
                         <div class="container">
                             <h2><?php echo $row['username']?></h2>
                             <p class="title"><?php echo $row['functie'];?></p>
-                            <p><?php echo "Name : ".$row['nume'];?></p>
-                            <p><?php echo "Country : ".$row['country'];?></p>
-                            <p><?php echo "State : ".$row['state'];?></p>
-                            <p><?php echo "Gmail : ".$row['gmail'];?></p>
+                            <div class="credentials">
+                                <p><?php echo "Name : ".$row['nume'];?></p>
+                                <p><?php echo "Country : ".$row['country'];?></p>
+                                <p><?php echo "State : ".$row['state'];?></p>
+                                <p><?php echo "Gmail : ".$row['gmail'];?></p>
+                            </div>
                         </div>
                     </div>
                 </div>

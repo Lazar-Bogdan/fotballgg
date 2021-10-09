@@ -60,44 +60,89 @@
                 </ul>
             </header>
             
-            <div class="content__home">
-                <h1 id="test" >These are our season</h1>
-                <div id="content" class="cointer__season">
-                    <details class="details-example">
-                        <summary>Italia</summary>
-                        <ul>   
-                            <button type="submit" name="seriea">SERIE A</button>
-                            <button type="submit" name="serieb">SERIE B</button>
-                            </ul>
-                    </details>
-                    <details class="details-example">
-                        <summary>Romania</summary>
-                        <ul>
-                            <button type="submit" name="liga1">LIGA 1</button>
-                            <button type="submit" name="liga2">LIGA 2</button>
-                        </ul>
-                    </details>
-                    <details class="details-example">
-                        <summary>France</summary>
-                        <ul>
-                            <button type="submit" name="ligue1">LIGUE 1</button>
-                            <button type="submit" name="ligue2">LIGUE 2</button>
-                        </ul>
-                    </details>
-                    <details class="details-example">
-                        <summary>Germany</summary>
-                        <ul>
-                            <button type="submit" name="bundesliga">Bundesliga</button>
-                            <button type="submit" name="2bundesliga">2Bundesliga</button>
-                        </ul>
-                    </details>
-                    <details class="details-example">
-                        <summary>Spain</summary>
-                        <ul>
-                            <button type="submit" name="laliga">La liga</button>
-                            <button type="submit" name="segundaDivision">Segunda Division</button>
-                        </ul>
-                    </details>
+            <style> 
+                * {
+                    box-sizing: border-box;
+                }
+
+                /* Create two equal columns that floats next to each other */
+                .column {
+                    float: left;
+                    width: 33.33%;
+                    padding: 50px;
+                    height: 1000px; 
+                }
+
+                /* Clear floats after the columns */
+                .row:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+
+                .content__home{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100px;
+                }
+                #test{
+                    font-style: Ebrima;
+                }
+            </style>
+
+            <div class="row">
+                <div class="column">
+                    <a href="http://forgifs.com" target="_blank"><img style="height: 300px" src="http://forgifs.com/gallery/d/205989-2/Soccer-footwork-deke.gif?" alt="forgifs.com" /></a>
+                    <a href="giphy.com" target="_blank"><img src=https://media0.giphy.com/media/3oKIPuZUcUO0vzwPEQ/giphy.gif?cid=790b76115a0fd47e03e6e66a7d573bffaef313d3760fc4f8&rid=giphy.gif&ct=g" alt="media3.giphy.com" /></a>
+                    <a href="giphy.com" target="_blank"><img src="https://media1.giphy.com/media/3o6gEaYbewKku0GwPS/giphy.gif?cid=790b7611dd4384ecf5be54e62b5992e987ef32d509585772&rid=giphy.gif&ct=g" alt="media1.giphy.com" /></a>
+                </div>
+                <div class="column">
+                    <div class="content__home">
+                        <h1 id="test"   >These are our season</h1>
+                        <div id="content" class="cointer__season">
+                            <details class="details-example">
+                                <summary>Italia</summary>
+                                <ul>   
+                                    <button type="submit" name="seriea">SERIE A</button>
+                                    <button type="submit" name="serieb">SERIE B</button>
+                                    </ul>
+                            </details>
+                            <details class="details-example">
+                                <summary>Romania</summary>
+                                <ul>
+                                    <button type="submit" name="liga1">LIGA 1</button>
+                                    <button type="submit" name="liga2">LIGA 2</button>
+                                </ul>
+                            </details>
+                            <details class="details-example">
+                                <summary>France</summary>
+                                <ul>
+                                    <button type="submit" name="ligue1">LIGUE 1</button>
+                                    <button type="submit" name="ligue2">LIGUE 2</button>
+                                </ul>
+                            </details>
+                            <details class="details-example">
+                                <summary>Germany</summary>
+                                <ul>
+                                    <button type="submit" name="bundesliga">Bundesliga</button>
+                                    <button type="submit" name="2bundesliga">2Bundesliga</button>
+                                </ul>
+                            </details>
+                            <details class="details-example">
+                                <summary>Spain</summary>
+                                <ul>
+                                    <button type="submit" name="laliga">La liga</button>
+                                    <button type="submit" name="segundaDivision">Segunda Division</button>
+                                </ul>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                <img src="banner.jpg" style="width:105%">
                 </div>
             </div>
 

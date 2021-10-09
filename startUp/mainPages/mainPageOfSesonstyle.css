@@ -89,13 +89,6 @@ header .menu-toggle {
     color: #006669;
 }
 
-.content__home{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
 
 .footer__container {
     background-color: #141414;
