@@ -181,128 +181,158 @@
                     clear: both;
                 }
                 
+                html,
+                body {
+                    height: 100%;
+                }
+
+                body {
+                    margin: 0;
+                    background: linear-gradient(45deg, #49a09d, #5f2c82);
+                    font-family: sans-serif;
+                    font-weight: 100;
+                }
+
+                table {
+                    width: 800px;
+                    border-collapse: collapse;
+                    overflow: hidden;
+                    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+                }
+
+                th,
+                td {
+                    padding: 15px;
+                    background-color: rgba(255,255,255,0.2);
+                    color: #fff;
+                }
+
+                th {
+                    text-align: left;
+                }
+
+                
 
             </style>
             <p> WELCOME to <?php echo $_SESSION['nameSeason'] ?> </p>
-            <div class="row">
-                <div class="column">
-                    <table class="table">
-                        <thead>
+            <div class="container-middlePage">
+                <div class="row">
+                    <div class="column">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Season</th>
+                                    <th>Name</th>
+                                    <th>matches</th>
+                                    <th>wins</th>
+                                    <th>loses</th>
+                                    <th>ties</th>
+                                    <th>goals</th>
+                                    <th>points</th>
+                                    <th>favorite</th>
+                                </tr>
+                            </thead>
+                            <?php
+                                $connect = new mysqli('localhost','root','','user_database') or die ("unable to connect");
+                                $seasonName = $_SESSION['nameSeason'];
+                                echo $seasonName;
+                                $result = mysqli_query($connect,"SELECT * from teams WHERE nameSeason='$seasonName'");
+                                while($row = $result->fetch_assoc()) :
+                            ?>
                             <tr>
-                                <th>Season</th>
-                                <th>Name</th>
-                                <th>matches</th>
-                                <th>wins</th>
-                                <th>loses</th>
-                                <th>ties</th>
-                                <th>goals</th>
-                                <th>points</th>
-                                <th>favorite</th>
+                                <td><?php echo $row['nameSeason']; ?></td>
+                                <td><?php echo $row['teamName']; ?></td>
+                                <td><?php echo $row['matches']; ?></td>
+                                <td><?php echo $row['wins']; ?></td>
+                                <td><?php echo $row['loses']; ?></td>
+                                <td><?php echo $row['ties']; ?></td>
+                                <td><?php echo $row['goals']; ?></td>
+                                <td><?php echo $row['points']; ?></td>
+                                <td>
+                                </td>
                             </tr>
-                        </thead>
-                        <?php
-                            $connect = new mysqli('localhost','root','','user_database') or die ("unable to connect");
-                            $seasonName = $_SESSION['nameSeason'];
-                            echo $seasonName;
-                            $result = mysqli_query($connect,"SELECT * from teams WHERE nameSeason='$seasonName'");
-                            while($row = $result->fetch_assoc()) :
-                        ?>
-                        <tr>
-                            <td><?php echo $row['nameSeason']; ?></td>
-                            <td><?php echo $row['teamName']; ?></td>
-                            <td><?php echo $row['matches']; ?></td>
-                            <td><?php echo $row['wins']; ?></td>
-                            <td><?php echo $row['loses']; ?></td>
-                            <td><?php echo $row['ties']; ?></td>
-                            <td><?php echo $row['goals']; ?></td>
-                            <td><?php echo $row['points']; ?></td>
-                            <td>
+                            <?php endwhile; ?>
+                        </table>
+                    </div>
+                    <div class="column">
+                        <style> 
 
+                            @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
+                            .column container {
+                                width: 400px;
+                                padding: 10px;
+                            }
+                            .container {
+                                width: 400px;
+                                padding: 10px;
+                            }
+
+                            .message-blue {
+                                position: relative;
+                                margin-left: 20px;
+                                margin-bottom: 10px;
+                                padding: 10px;
+                                background-color: #A8DDFD;
+                                width: 500px;
+                                height: 100px;
+                                text-align: left;
+                                font: 400 .9em 'Open Sans', sans-serif;
+                                border: 1px solid #97C6E3;
+                                border-radius: 10px;
+                            }
+
+                            .message-content {
+                                padding: 0;
+                                margin: 0;
+                            }
+
+                            .table-comment{
                                 
+                                align-items: center;
+                            }
 
-                            </td>
-                        </tr>
-                        <?php endwhile; ?>
-                    </table>
-                </div>
-                <div class="column">
-                    <style> 
+                            .scrollit {
+                                overflow-y:scroll;
+                                width: 600px;
+                                height:400px;
+                            }
+                            .commentSection{
+                                width: 550px;
+                                height:25px;
+                            }
+                            .button-comment{
+                                height:25px;
+                            }
+                        </style>
 
-                        @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
-                        .column container {
-                            width: 400px;
-                            padding: 10px;
-                        }
-                        .container {
-                            width: 400px;
-                            padding: 10px;
-                        }
-
-                        .message-blue {
-                            position: relative;
-                            margin-left: 20px;
-                            margin-bottom: 10px;
-                            padding: 10px;
-                            background-color: #A8DDFD;
-                            width: 500px;
-                            height: 50px;
-                            text-align: left;
-                            font: 400 .9em 'Open Sans', sans-serif;
-                            border: 1px solid #97C6E3;
-                            border-radius: 10px;
-                        }
-
-                        .message-content {
-                            padding: 0;
-                            margin: 0;
-                        }
-
-                        .table-comment{
-                            
-                            align-items: center;
-                        }
-
-                        .scrollit {
-                            overflow-y:scroll;
-                            width: 600px;
-                            height:400px;
-                        }
-                        .commentSection{
-                            width: 550px;
-                            height:25px;
-                        }
-                        .button-comment{
-                            height:25px;
-                        }
-                    </style>
-
-                    <?php
-                        $mysqli=new mysqli('localhost','root','','user_database') or die ("unable to connect");
-                        $season = $_SESSION['nameSeason'];
-                        $username=$_SESSION['username'];
-                        $result = $mysqli->query("SELECT username,comment FROM comments WHERE season='$season'");
-                        echo '<div class="scrollit"';
-                        echo '<table class="table-comment">';
-                        while($row = $result->fetch_assoc()){
-                            echo "<tr><td>";
-                            echo '<div class="container">';
-                                echo '<div class="message-blue"';
-                                    echo '<p class="message-content">'.$row['username'].':'.$row['comment'].'</p>';
+                        <?php
+                            $mysqli=new mysqli('localhost','root','','user_database') or die ("unable to connect");
+                            $season = $_SESSION['nameSeason'];
+                            $username=$_SESSION['username'];
+                            $result = $mysqli->query("SELECT username,comment,dhours FROM comments WHERE season='$season'");
+                            echo '<div class="scrollit"';
+                            echo '<table class="table-comment">';
+                            while($row = $result->fetch_assoc()){
+                                echo "<tr><td>";
+                                echo '<div class="container">';
+                                    echo '<div class="message-blue"';
+                                        echo '<p class="message-content">'.$row['dhours'].'-'.$row['username'].':'.$row['comment'].'</p>';
+                                    echo "</div>";
                                 echo "</div>";
+                                echo "</td></tr>";
+                            }
+                            echo "</table>";
                             echo "</div>";
-                            echo "</td></tr>";
-                        }
-                        echo "</table>";
-                        echo "</div>";
-                        $result=mysqli_query($mysqli,"SELECT * from users WHERE username='$username'");
-                        $row = $result->fetch_assoc();
-                        if($row['functie']=="user" || $row['functie']=="administrator"){
-                            echo '<input type="text" name="addComment" class="commentSection" placeholder="add comment">';
-                            echo '<button type="submit" class="button-comment" name="comment">Comment</button>';
-                        }else{
-                            echo 'For adding a comment, please register/login';
-                        }
-                    ?> 
+                            $result=mysqli_query($mysqli,"SELECT * from users WHERE username='$username'");
+                            $row = $result->fetch_assoc();
+                            if($row['functie']=="user" || $row['functie']=="administrator"){
+                                echo '<input type="text" name="addComment" class="commentSection" placeholder="add comment">';
+                                echo '<button type="submit" class="button-comment" name="comment">Comment</button>';
+                            }else{
+                                echo 'For adding a comment, please register/login';
+                            }
+                        ?> 
+                    </div>
                 </div>
             </div>
                     

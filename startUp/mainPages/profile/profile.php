@@ -158,6 +158,13 @@
                     </ul>
             </header>
             <style> 
+                body {
+                    margin: 0;
+                    background: linear-gradient(45deg, #49a09d, #5f2c82);
+                    font-family: sans-serif;
+                    font-weight: 100;
+                }
+
                 .column {
                     float: left;
                     width: 33.3%;

@@ -63,6 +63,14 @@
             <style> 
                 * {
                     box-sizing: border-box;
+                    font-family: Ebrima;
+                }
+                
+                body {
+                    margin: 0;
+                    background: linear-gradient(45deg, #49a09d, #5f2c82);
+                    font-family: sans-serif;
+                    font-weight: 100;
                 }
 
                 /* Create two equal columns that floats next to each other */

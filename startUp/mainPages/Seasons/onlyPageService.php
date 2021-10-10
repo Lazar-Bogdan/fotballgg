@@ -8,10 +8,8 @@
         $username = $_SESSION['username'];
         $comment = $_POST['addComment'];
         $season = $_SESSION['nameSeason'];
-        echo $username;
-        echo $comment;
-        echo $season;
-        $mysqli->query("INSERT into comments (username,comment,season) values ('$username','$comment','$season')");
+        $time = date('H:i:s');
+        $mysqli->query("INSERT into comments (username,comment,season,dhours) values ('$username','$comment','$season','$time')");
         header("location:onlyPageOfSeasons.php");
     }
     
