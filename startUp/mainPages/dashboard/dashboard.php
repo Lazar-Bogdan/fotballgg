@@ -5,41 +5,10 @@
     <head>
         <meta charset="UTF-8">
         <title>dashboard</title>
+        <link rel="stylesheet" href="dashboard.css">
     </head>
 
     <body>
-        <style> 
-            * {
-                box-sizing: border-box;
-                font-family: Ebrima;
-            }
-
-            /* Create two equal columns that floats next to each other */
-            .column {
-                float: left;
-                width: 33.33%;
-                padding: 50px;
-                height: 1000px; 
-            }
-
-            /* Clear floats after the columns */
-            .row:after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-            table {
-                border: 1px solid black;
-                table-layout: fixed;
-            }
-
-            th,
-            td {
-                border: 1px solid black;
-                width: 100px;
-                overflow: hidden;
-            }
-        </style>
         <?php require_once 'dashboardService.php'?>
 
         <?php
@@ -59,6 +28,7 @@
 
         <form method="POST" action="dashboardService.php">
             <p> Welcome ! </p>
+            <button class="button_style" type="submit" name="goBack">Go Back</button>
             <div class="row">
                 <div class="column">
                     <?php
@@ -126,14 +96,14 @@
                     <?php
                         if($update==true):
                     ?>
-                    <button type="submit" name="update">Update</button>
+                    <button class="button_style" type="submit" name="update">Update</button>
                     <?php else: ?>
-                    <button type="submit" name="confirm">Confirm</button>
+                    <button class="button_style" type="submit" name="confirm">Confirm</button>
                     <?php endif;?>
 
 
                 </div>
-
+                <!---- started users_Table --> 
                 <div class="column">
                     <?php
 
@@ -173,32 +143,30 @@
                             <td><?php echo $row['country']; ?></td>
                             <td><?php echo $row['state']; ?></td>
                             <td>
-                                <a href="dashboard.php?edit= <?php echo $row['position'];?>"
+                                <a href="dashboard.php?edit-users= <?php echo $row['id'];?>"
                                     class="btn btn-danger">Edit</a>
-                                <a href="dashboardService.php?delete=<?php echo $row['position'];?>"
+                                <a href="dashboardService.php?delete-users=<?php echo $row['id'];?>"
                                     class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                         <?php endwhile;?>
                         </table>
-                        <input type="hidden" name="position-users" value="<?php echo $position; ?>">
-                        <input type="text" value="<?php echo $nameSeason?>" placeholder="username-users" name="username-users"><br>
-                        <input type="text" value="<?php echo $teamName?>" placeholder="name" name="name"><br>
-                        <input type="text" value="<?php echo $matches?>" placeholder="function" name="function"><br>
-                        <input type="text" value="<?php echo $wins?>" placeholder="gmail" name="gmail"><br>
-                        <input type="text" value="<?php echo $loses?>" placeholder="country" name="country"><br>
-                        <input type="text" value="<?php echo $ties?>" placeholder="state" name="state"><br>
+                        <input type="hidden" name="id_users" value="<?php echo $id_users; ?>">
+                        <input type="text" value="<?php echo $username?>" placeholder="username-users" name="username-users"><br>
+                        <input type="text" value="<?php echo $nume?>" placeholder="name" name="name"><br>
+                        <input type="text" value="<?php echo $functie?>" placeholder="function" name="function"><br>
+                        <input type="text" value="<?php echo $gmail?>" placeholder="gmail" name="gmail"><br>
+                        <input type="text" value="<?php echo $country?>" placeholder="country" name="country"><br>
+                        <input type="text" value="<?php echo $state?>" placeholder="state" name="state"><br>
                         
                         <?php
-                        if($update==true):
+                        if($update_users==true):
                         ?>
-                        <button type="submit" name="update-users">Update</button>
-                        <?php else: ?>
-                        <button type="submit" name="confirm-users">Confirm</button>
+                        <button class="button_style" type="submit" name="update-users">Update</button>
                         <?php endif;?>
                     </div>
                 </div>
-
+                <!---- started users_comments --> 
                 <div class="column">
                     <?php
 
@@ -232,31 +200,28 @@
                             <td><?php echo $row['comment']; ?></td>
                             <td><?php echo $row['season']; ?></td>
                             <td>
-                                <a href="dashboard.php?edit= <?php echo $row['position'];?>"
+                                <a href="dashboard.php?edit-comment= <?php echo $row['id'];?>"
                                     class="btn btn-danger">Edit</a>
-                                <a href="dashboardService.php?delete=<?php echo $row['position'];?>"
+                                <a href="dashboardService.php?delete-comment=<?php echo $row['id'];?>"
                                     class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                         <?php endwhile;?>
                         </table>
 
-                        <input type="hidden" name="position-comments" value="<?php echo $position; ?>">
-                        <input type="text" value="<?php echo $nameSeason?>" placeholder="username-comments" name="username-comments"><br>
-                        <input type="text" value="<?php echo $teamName?>" placeholder="comment" name="comment"><br>
-                        <input type="text" value="<?php echo $matches?>" placeholder="season-comment" name="season-comment"><br>
+                        <input type="hidden" name="id-comment" value="<?php echo $id_comment; ?>">
+                        <input type="text" value="<?php echo $username_comment?>" placeholder="username-comment" name="username-comments"><br>
+                        <input type="text" value="<?php echo $comment?>" placeholder="comment" name="comment"><br>
+                        <input type="text" value="<?php echo $season_comment?>" placeholder="season-comment" name="season-comment"><br>
                         <?php
-                        if($update==true):
+                        if($update_comment==true):
                         ?>
-                        <button type="submit" name="update-users">Update</button>
-                        <?php else: ?>
-                        <button type="submit" name="confirm-users">Confirm</button>
+                        <button class="button_style" type="submit" name="update-comments">Update</button>
                         <?php endif;?>
                     </div>
                 </div>
             </div>
 
-            <button type="submit" name="goBack">Go Back</button>
         </form>
 
 

@@ -68,7 +68,8 @@
                 
                 body {
                     margin: 0;
-                    background: linear-gradient(45deg, #49a09d, #5f2c82);
+                    font-family: Helvetica;
+                    background-image: linear-gradient(to left, #30cfd0 0%, #330867 100%);
                     font-family: sans-serif;
                     font-weight: 100;
                 }
@@ -93,11 +94,25 @@
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    height: 100px;
+                    height: 300px;
                 }
-                #test{
-                    font-style: Ebrima;
+
+                #welcome-text{
+                    color: white;
+                    font-style: oblique;
                 }
+
+                summary:hover{
+                    color:white;
+                }
+
+                .details-example{
+                    height: 60px;
+                }
+                ul{
+                    height: 20px;
+                }
+
             </style>
 
             <div class="row">
@@ -108,14 +123,14 @@
                 </div>
                 <div class="column">
                     <div class="content__home">
-                        <h1 id="test"   >These are our season</h1>
+                        <h1 id="welcome-text">These are our season</h1>
                         <div id="content" class="cointer__season">
                             <details class="details-example">
-                                <summary>Italia</summary>
+                                <summary style="text-color:white">Italia</summary>
                                 <ul>   
                                     <button type="submit" name="seriea">SERIE A</button>
                                     <button type="submit" name="serieb">SERIE B</button>
-                                    </ul>
+                                </ul>
                             </details>
                             <details class="details-example">
                                 <summary>Romania</summary>

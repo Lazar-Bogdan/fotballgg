@@ -130,7 +130,6 @@
                     <li>
                         <?php
                             session_start();
-                            session_start();
                             $connect=new mysqli('localhost', 'root','', 'user_database') or die("unable to connect");
                             $username = $_SESSION['username'];
 
@@ -188,13 +187,14 @@
 
                 body {
                     margin: 0;
-                    background: linear-gradient(45deg, #49a09d, #5f2c82);
+                    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
                     font-family: sans-serif;
                     font-weight: 100;
                 }
 
                 table {
                     width: 800px;
+                    overflow-y:scroll;
                     border-collapse: collapse;
                     overflow: hidden;
                     box-shadow: 0 0 20px rgba(0,0,0,0.1);
@@ -211,6 +211,11 @@
                     text-align: left;
                 }
 
+                .scrollbar {
+                    overflow-y:scroll;
+                    width: 900px;
+                    height:450px;
+                }
                 
 
             </style>
@@ -218,41 +223,40 @@
             <div class="container-middlePage">
                 <div class="row">
                     <div class="column">
-                        <table class="table">
-                            <thead>
+                        <div class="scrollbar">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Season</th>
+                                        <th>Name</th>
+                                        <th>matches</th>
+                                        <th>wins</th>
+                                        <th>loses</th>
+                                        <th>ties</th>
+                                        <th>goals</th>
+                                        <th>points</th>
+                                    </tr>
+                                </thead>
+                                <?php
+                                    $connect = new mysqli('localhost','root','','user_database') or die ("unable to connect");
+                                    $seasonName = $_SESSION['nameSeason'];
+                                    echo $seasonName;
+                                    $result = mysqli_query($connect,"SELECT * from teams WHERE nameSeason='$seasonName' ORDER by points DESC");
+                                    while($row = $result->fetch_assoc()) :
+                                ?>
                                 <tr>
-                                    <th>Season</th>
-                                    <th>Name</th>
-                                    <th>matches</th>
-                                    <th>wins</th>
-                                    <th>loses</th>
-                                    <th>ties</th>
-                                    <th>goals</th>
-                                    <th>points</th>
-                                    <th>favorite</th>
+                                    <td><?php echo $row['nameSeason']; ?></td>
+                                    <td><?php echo $row['teamName']; ?></td>
+                                    <td><?php echo $row['matches']; ?></td>
+                                    <td><?php echo $row['wins']; ?></td>
+                                    <td><?php echo $row['loses']; ?></td>
+                                    <td><?php echo $row['ties']; ?></td>
+                                    <td><?php echo $row['goals']; ?></td>
+                                    <td><?php echo $row['points']; ?></td>
                                 </tr>
-                            </thead>
-                            <?php
-                                $connect = new mysqli('localhost','root','','user_database') or die ("unable to connect");
-                                $seasonName = $_SESSION['nameSeason'];
-                                echo $seasonName;
-                                $result = mysqli_query($connect,"SELECT * from teams WHERE nameSeason='$seasonName'");
-                                while($row = $result->fetch_assoc()) :
-                            ?>
-                            <tr>
-                                <td><?php echo $row['nameSeason']; ?></td>
-                                <td><?php echo $row['teamName']; ?></td>
-                                <td><?php echo $row['matches']; ?></td>
-                                <td><?php echo $row['wins']; ?></td>
-                                <td><?php echo $row['loses']; ?></td>
-                                <td><?php echo $row['ties']; ?></td>
-                                <td><?php echo $row['goals']; ?></td>
-                                <td><?php echo $row['points']; ?></td>
-                                <td>
-                                </td>
-                            </tr>
-                            <?php endwhile; ?>
-                        </table>
+                                <?php endwhile; ?>
+                            </table>
+                        </div>
                     </div>
                     <div class="column">
                         <style> 

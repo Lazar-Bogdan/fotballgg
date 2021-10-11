@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    font-family: Ebrima;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 50px;
+    height: 1000px; 
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+table {
+    border: 1px solid black;
+    table-layout: fixed;
+    background-color:#eee;
+    border-collapse:collapse; 
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+th,
+td {
+    border: 1px solid black;
+}
+
+.button_style{
+    width: 20%;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: #3a3a3a;
+    cursor: pointer;
+    outline: none;
+}
