@@ -3,6 +3,7 @@
     $connect = new mysqli('localhost','root','','user_database') or die("unable to connect");
 
     if(isset($_POST['confirm'])){
+        $connect = new mysqli('localhost','root','','user_database') or die("unable to connect");
         $nameSeason = $_POST['nameSeason'];
         $teamName = $_POST['teamName'];
         $matches=$_POST['matches'];
@@ -15,7 +16,7 @@
         $query=mysqli_query($connect,$mysql);
         $_SESSION['message']= "Record has been added";
         $_SESSION['msg_type']="succes";
-        header("Location:dashboard.php");
+        header("location:dashboard.php"); 
     }
 
 
