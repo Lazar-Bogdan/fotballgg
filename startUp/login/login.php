@@ -106,9 +106,9 @@
             <form action="loginService.php" method="POST" id="login-form">
                 <div class="login-label">
                     <p>Username:</p>
-                    <input type="Text" placeholder="username" name="username">
+                    <input type="Text" placeholder="username" name="username" required>
                     <p>Password:</p>
-                    <input type="password" placeholder="password" name="password">
+                    <input type="password" placeholder="password" name="password" required>
                     <p></p>
                     <button type="submit" name="confirm" class="button-style">Confirm</button>
                     <p></p>

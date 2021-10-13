@@ -252,6 +252,7 @@
                 }
 
                 .column {
+                    background-image: linear-gradient(to top, #ffffff 0%, #ffffff 100%);
                     float: left;
                     width: 33.3%;
                     margin-bottom: 16px;
@@ -378,7 +379,7 @@
                         </div>
                         <div class="footer__link--items">
                         <h2>Contact Us</h2>
-                        <a href="/">Contact</a> <a href="/">Support</a>
+                        <a href="/">Support</a>
                         </div>
                     </div>
                     <div class="footer__link--wrapper">

@@ -201,6 +201,9 @@
                 .title {
                     color: grey;
                 }
+                .column{
+                    background-image: linear-gradient(to top, #ffffff 0%, #ffffff 100%);
+                }
                 
             </style>
             <div class="row">
@@ -375,7 +378,7 @@
                         </div>
                         <div class="footer__link--items">
                         <h2>Contact Us</h2>
-                        <a href="/">Contact</a> <a href="/">Support</a>
+                        <a href="/">Support</a>
                         </div>
                     </div>
                     <div class="footer__link--wrapper">

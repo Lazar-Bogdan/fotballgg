@@ -22,17 +22,17 @@
             <form action="registerService.php" method="POST" id="register-form">
                 <div class="register-label">
                     <p>Name:</p>
-                    <input type="text" placeholder="name" name="name">
+                    <input type="text" placeholder="name" name="name" require>
                     <p>Username:</p>
-                    <input type="text" placeholder="username" name="username">
+                    <input type="text" placeholder="username" name="username" require>
                     <p>Password:</p>
-                    <input type="password" placeholder="password" name="password">
+                    <input type="password" placeholder="password" name="password" required>
                     <p>Gmail:</p>
-                    <input type="text" placeholder="gmail" name="gmail">
+                    <input type="text" placeholder="gmail" name="gmail" required>
                     <p>Country:</p>
-                    <input type="text" placeholder="country" name="country">
+                    <input type="text" placeholder="country" name="country" required>
                     <p>State:</p>
-                    <input type="text" placeholder="state" name="state">
+                    <input type="text" placeholder="state" name="state" require> 
 
                 </div>
                 <p></p>

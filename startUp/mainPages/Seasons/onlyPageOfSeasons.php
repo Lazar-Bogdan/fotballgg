@@ -484,7 +484,7 @@
                         </div>
                         <div class="footer__link--items">
                         <h2>Contact Us</h2>
-                        <a href="/">Contact</a> <a href="/">Support</a>
+                        <a href="/">Support</a>
                         </div>
                     </div>
                     <div class="footer__link--wrapper">

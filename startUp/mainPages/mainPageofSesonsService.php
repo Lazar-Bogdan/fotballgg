@@ -13,6 +13,12 @@
         callingSeasons();
     }
 
+    if(isset($_GET['WhoWeAre'])){
+        echo '<script>
+                document.getElementById("myForm").style.display = "none";
+        </script>';
+    }
+
 ?>
 
 

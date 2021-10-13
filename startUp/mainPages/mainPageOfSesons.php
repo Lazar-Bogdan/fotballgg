@@ -11,7 +11,41 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
-    </head>
+
+    <style type="text/css">
+    .overlay {
+        background: #999;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        opacity: 0.95;
+        filter: alpha(opacity=95);
+        z-index: 1;
+    }
+    .popup {
+        background: #fff;
+        border: 2px solid #333;
+        border-radius: 5px;
+        padding: 10px;
+        position: absolute;
+        z-index: 1000;
+    }
+    .popup img {
+        display: block;
+        margin-bottom: 15px;
+    }
+    .popup div.action {
+        text-align: right;
+    }
+    .popup div.action input {
+        background: red;
+        color: white;
+        border: red;
+    }
+    </style>
+</head>
 
     <body>
         <link rel="stylesheet" type="text/css" href="mainPageOfSesonstyle.css">
@@ -59,7 +93,6 @@
                     </li>
                 </ul>
             </header>
-            
             <style> 
                 * {
                     box-sizing: border-box;
@@ -169,20 +202,18 @@
                 </div>
             </div>
 
-
-
             <div class="footer__container">
                 <div class="footer__links">
                     <div class="footer__link--wrapper">
                         <div class="footer__link--items">
                         <h2>About Us</h2>
                         <a href="/sign__up">How it works</a>
-                        <a href="/">Who are we ?</a>
+                        <a href="mainPageOfSesons.php?WhoWeAre">Who are we ?</a>
                         <a href="/">Terms of Service</a>
                         </div>
                         <div class="footer__link--items">
                         <h2>Contact Us</h2>
-                        <a href="/">Contact</a> <a href="/">Support</a>
+                        <a href="images/a3.jpg">Support</a>
                         </div>
                     </div>
                     <div class="footer__link--wrapper">
@@ -227,6 +258,9 @@
                     </div>
                 </section>
             </div>
+            <form class="form-popup" id="myForm">
+                <button type="submit">test</button>
+            </form>
 
         </form>
 
