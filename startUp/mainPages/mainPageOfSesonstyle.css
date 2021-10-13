@@ -97,6 +97,7 @@ header .menu-toggle {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 200px;
 }
 
 #footer__logo {
@@ -220,3 +221,4 @@ header .menu-toggle {
     width: 100%;
     }
 }
+

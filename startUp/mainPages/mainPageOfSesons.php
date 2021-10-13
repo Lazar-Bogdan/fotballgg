@@ -202,67 +202,177 @@
                 </div>
             </div>
 
+            <style>
+                .popup {
+                    width: 90px;
+                    background-color: #141414;
+                    position: relative;
+                    display: inline-block;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+                
+                /* The actual popup */
+                .popup .popuptext {
+                    visibility: hidden;
+                    width: 130px;
+                    background-color: #555;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 6px;
+                    padding: 8px 0;
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 125%;
+                    left: 50%;
+                    margin-left: -80px;
+                }
+                
+                /* Popup arrow */
+                .popup .popuptext::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: #555 transparent transparent transparent;
+                }
+                
+                /* Toggle this class - hide and show the popup */
+                .popup .show {
+                    visibility: visible;
+                    -webkit-animation: fadeIn 1s;
+                    animation: fadeIn 1s;
+                }
+                
+                /* Add animation (fade in the popup) */
+                @-webkit-keyframes fadeIn {
+                    from {opacity: 0;} 
+                    to {opacity: 1;}
+                }
+                
+                @keyframes fadeIn {
+                    from {opacity: 0;}
+                    to {opacity:1 ;}
+                }
+
+                .footer__link--items {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    margin: 16px;
+                    text-align: left;
+                    width: 190px;
+                    box-sizing: border-box;
+                }
+
+                .footer__links {
+                    width: 550%;
+                    max-width: 1000px;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .footer__link--wrapper {
+                    display: flex;
+                }
+
+            </style>
+
+          
+
+
             <div class="footer__container">
-                <div class="footer__links">
-                    <div class="footer__link--wrapper">
-                        <div class="footer__link--items">
-                        <h2>About Us</h2>
-                        <a href="/sign__up">How it works</a>
-                        <a href="mainPageOfSesons.php?WhoWeAre">Who are we ?</a>
-                        <a href="/">Terms of Service</a>
+                    <div class="footer__links">
+                        <div class="footer__link--wrapper">
+                            <div class="footer__link--items">
+                            <h2>About Us</h2>
+                                <div class="popup" onclick="HowWork()">
+                                    <a>How it works</a><span class="popuptext" id="HowWorks">Here you can find information about you're favorite team ! 
+                                        If you are a guest, feel free to go through pages. If you are a users, don't forget to leave a commentary. Finally if
+                                        you are a administrator, you are the boss!
+                                    </span>
+                                </div>
+                                <div class="popup" onclick="TermsFunction()">  
+                                <a>Terms of Service</a><span class="popuptext" id="Terms">We all know that if you are already a user 
+                                    you should know about this. But, for everyone, do not spam on the commentary section, do not insult other users. If 
+                                    things like this happens, you're account will be deleted
+                                </span>
+                                </div>
+                            </div>
+                                <div class="footer__link--items">
+                                    <h2>Contact Us</h2>
+                                        
+                                </div>
+                            </div>
+                    
+
+                            <div class="footer__link--items">
+                                <h2>Social Media</h2>
+                                <a href="https://www.instagram.com/lazarr.bogdan/">Instagram</a> <a href="https://www.facebook.com/bogdi.lazar.5/ ">Facebook</a>
+                            </div>
+                            
+                        
                         </div>
-                        <div class="footer__link--items">
-                        <h2>Contact Us</h2>
-                        <a href="images/a3.jpg">Support</a>
+                    <section class="social__media">
+                        <div class="social__media--wrap">
+                            <div class="footer__logo">
+                                <a href="mainPageOfSesons.php" id="footer__logo"><i class="fas fa-futbol"></i>FOTBALGG</a>
+                            </div>
+                            <p class="website__rights">© FOTBALGG 2021. All rights reserved</p>
+                            <div class="social__icons">
+                                <a
+                                    class="social__icon--link"
+                                    href="https://www.facebook.com/bogdi.lazar.5/ "
+                                    target="_blank"
+                                    aria-label="Facebook"
+                                >
+                                <i class="fab fa-facebook"></i>
+                                </a>
+                                <a
+                                    class="social__icon--link"
+                                    href="https://www.instagram.com/lazarr.bogdan/"
+                                    target="_blank"
+                                    aria-label="Instagram"
+                                >
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a
+                                    class="social__icon--link"
+                                    href="https://www.linkedin.com/in/lazar-bogdan-b54952205/"
+                                    target="_blank"
+                                    aria-label="LinkedIn"
+                                >
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="footer__link--wrapper">
-                        <div class="footer__link--items">
-                        <h2>Social Media</h2>
-                        <a href="https://www.instagram.com/lazarr.bogdan/">Instagram</a> <a href="https://www.facebook.com/bogdi.lazar.5/ ">Facebook</a>
-                        </div>
-                    </div>
-                </div>
-                <section class="social__media">
-                    <div class="social__media--wrap">
-                        <div class="footer__logo">
-                            <a href="mainPageOfSesons.php" id="footer__logo"><i class="fas fa-futbol"></i>FOTBALGG</a>
-                        </div>
-                        <p class="website__rights">© FOTBALGG 2021. All rights reserved</p>
-                        <div class="social__icons">
-                            <a
-                                class="social__icon--link"
-                                href="https://www.facebook.com/bogdi.lazar.5/ "
-                                target="_blank"
-                                aria-label="Facebook"
-                            >
-                            <i class="fab fa-facebook"></i>
-                            </a>
-                            <a
-                                class="social__icon--link"
-                                href="https://www.instagram.com/lazarr.bogdan/"
-                                target="_blank"
-                                aria-label="Instagram"
-                            >
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a
-                                class="social__icon--link"
-                                href="https://www.linkedin.com/in/lazar-bogdan-b54952205/"
-                                target="_blank"
-                                aria-label="LinkedIn"
-                            >
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-                </section>
+                    </section>
+
             </div>
-            <form class="form-popup" id="myForm">
-                <button type="submit">test</button>
-            </form>
 
         </form>
+
+        <script>
+            function HowWork(){
+                var popup=document.getElementById("HowWorks");
+                popup.classList.toggle("show");
+            }
+
+            function TermsFunction(){
+                var popup=document.getElementById("Terms");
+                popup.classList.toggle("show");
+            }
+            function SupportFunction(){
+                var popup=document.getElementById("Support");
+                popup.classList.toggle("show");
+            }
+        </script>
 
     </body>
 

@@ -26,11 +26,11 @@
                     <p>Username:</p>
                     <input type="text" placeholder="username" name="username" require>
                     <p>Password:</p>
-                    <input type="password" placeholder="password" name="password" required>
+                    <input type="password" placeholder="password" name="password" require>
                     <p>Gmail:</p>
-                    <input type="text" placeholder="gmail" name="gmail" required>
+                    <input type="text" placeholder="gmail" name="gmail" require>
                     <p>Country:</p>
-                    <input type="text" placeholder="country" name="country" required>
+                    <input type="text" placeholder="country" name="country" require>
                     <p>State:</p>
                     <input type="text" placeholder="state" name="state" require> 
 

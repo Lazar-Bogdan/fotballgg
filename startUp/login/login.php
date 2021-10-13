@@ -55,7 +55,7 @@
 
             #main-holder{
                 width: 50%;
-                height: 100%;
+                height: 70%;
                 display: grid;
                 justify-items: center;
                 align-items: center;
@@ -106,9 +106,9 @@
             <form action="loginService.php" method="POST" id="login-form">
                 <div class="login-label">
                     <p>Username:</p>
-                    <input type="Text" placeholder="username" name="username" required>
+                    <input type="Text" placeholder="username" name="username" require>
                     <p>Password:</p>
-                    <input type="password" placeholder="password" name="password" required>
+                    <input type="password" placeholder="password" name="password" require>
                     <p></p>
                     <button type="submit" name="confirm" class="button-style">Confirm</button>
                     <p></p>
