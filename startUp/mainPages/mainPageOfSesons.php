@@ -129,10 +129,15 @@
                     align-items: center;
                     height: 300px;
                 }
+                @font-face {
+                    font-family: "Bitstream Vera Serif Bold";
+                    src: url("https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf");
+                }
 
                 #welcome-text{
                     color: white;
                     font-style: oblique;
+                    font-family: "Times New Roman";
                 }
 
                 summary:hover{
@@ -201,8 +206,99 @@
                 <img src="banner.jpg" style="width:105%">
                 </div>
             </div>
-
+            
             <style>
+                header {
+                    background: #131313;
+                    height: 66px;
+                }
+
+                header * {
+                    color: white;
+                }
+
+                header .logo {
+                    float: left;
+                    height: inherit;
+                    margin-left: 2em;
+                }
+
+                header .logo-text {
+                    margin: 9px;
+                    font-family: 'Candal', serif;
+                }
+
+                header .logo-text span {
+                    color: #05f7ff;
+                }
+
+                header ul {
+                    float: right;
+                    margin: 0px;
+                    padding: 0px;
+                    list-style: none;
+                }
+
+                header ul li {
+                    float: left;
+                    position: relative;
+                }
+
+                header ul li ul {
+                    position: absolute;
+                    top: 66px;
+                    right: 0px;
+                    width: 180px;
+                    display: none;
+                    z-index: 88888;
+                }
+
+                header ul li:hover ul {
+                    display: block;
+                }
+
+                header ul li ul li {
+                    width: 100%;
+                }
+
+                header ul li ul li a {
+                    padding: 10px;
+                    background: white;
+                    color: #444;
+                }
+
+                header ul li ul li a.logout {
+                    color: red;
+                }
+
+                header ul li ul li a:hover {
+                    background: #d5d6d6;
+                }
+
+                header ul li a {
+                    display: block;
+                    padding: 21px;
+                    font-size: 1.1em;
+                    text-decoration: none;
+                }
+
+                header ul li a:hover {
+                    background: #006669;
+                    transition: 0.5s;
+                }
+
+                header .menu-toggle {
+                    display: none;
+                }
+
+                .page-wrapper {
+                    min-height: 100%;
+                }
+
+                .page-wrapper a:hover {
+                    color: #006669;
+                }
+
                 .popup {
                     width: 90px;
                     background-color: #141414;
@@ -249,30 +345,28 @@
                     -webkit-animation: fadeIn 1s;
                     animation: fadeIn 1s;
                 }
-                
-                /* Add animation (fade in the popup) */
-                @-webkit-keyframes fadeIn {
-                    from {opacity: 0;} 
-                    to {opacity: 1;}
-                }
-                
-                @keyframes fadeIn {
-                    from {opacity: 0;}
-                    to {opacity:1 ;}
-                }
 
-                .footer__link--items {
+                .footer__container {
+                    background-color: #141414;
+                    padding: 5rem 0;
                     display: flex;
                     flex-direction: column;
-                    align-items: flex-start;
-                    margin: 16px;
-                    text-align: left;
-                    width: 190px;
-                    box-sizing: border-box;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                }
+
+                #footer__logo {
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    text-decoration: none;
+                    font-size: 2rem;
                 }
 
                 .footer__links {
-                    width: 550%;
+                    width: 100%;
                     max-width: 1000px;
                     display: flex;
                     justify-content: center;
@@ -282,10 +376,108 @@
                     display: flex;
                 }
 
+                .footer__link--items {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    margin: 16px;
+                    text-align: left;
+                    width: 160px;
+                    box-sizing: border-box;
+                }
+
+                .footer__link--items h2 {
+                    margin-bottom: 16px;
+                }
+
+                .footer__link--items > h2 {
+                    color: #fff;
+                }
+
+                .footer__link--items a {
+                    color: #fff;
+                    text-decoration: none;
+                    margin-bottom: 0.5rem;
+                }
+
+                .footer__link--items a:hover {
+                    color: #e9e9e9;
+                    transition: 0.3s ease-out;
+                }
+
+                /* Social Icons */
+                .social__icon--link {
+                    color: #fff;
+                    font-size: 24px;
+                }
+
+                .social__media {
+                    max-width: 1000px;
+                    width: 100%;
+                }
+
+                .social__media--wrap {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 90%;
+                    max-width: 1000px;
+                    margin: 40px auto 0 auto;
+                }
+
+                .social__icons {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 240px;
+                }
+
+                .social__logo {
+                    color: #fff;
+                    justify-self: start;
+                    margin-left: 20px;
+                    cursor: pointer;
+                    text-decoration: none;
+                    font-size: 2rem;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 16px;
+                }
+
+                .website__rights {
+                    color: #fff;
+                }
+
+                @media screen and (max-width: 820px) {
+                    .footer__links {
+                    padding-top: 2rem;
+                    }
+
+                    #footer__logo {
+                    margin-bottom: 2rem;
+                    }
+
+                    .website__rights {
+                    margin-bottom: 2rem;
+                    }
+
+                    .footer__link--wrapper {
+                    flex-direction: column;
+                    }
+
+                    .social__media--wrap {
+                    flex-direction: column;
+                    }
+                }
+
+                @media screen and (max-width: 480px) {
+                    .footer__link--items {
+                    margin: 0;
+                    padding: 10px;
+                    width: 100%;
+                    }
+                }
             </style>
-
-          
-
 
             <div class="footer__container">
                     <div class="footer__links">
@@ -304,11 +496,12 @@
                                     things like this happens, you're account will be deleted
                                 </span>
                                 </div>
-                            </div>
-                                <div class="footer__link--items">
-                                    <h2>Contact Us</h2>
-                                        
+                                <div class="popup" onclick="ContactFunction()">  
+                                <a>Contact us</a><span class="popuptext" id="Contact">For any support please contact : admin@gmail.com
+                                </span>
                                 </div>
+                            </div>
+                                
                             </div>
                     
 
@@ -370,6 +563,10 @@
             }
             function SupportFunction(){
                 var popup=document.getElementById("Support");
+                popup.classList.toggle("show");
+            }
+            function ContactFunction(){
+                var popup=document.getElementById("Contact");
                 popup.classList.toggle("show");
             }
         </script>
