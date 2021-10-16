@@ -15,7 +15,7 @@
         $mysql = "insert into teams (nameSeason,teamName,matches,wins,loses,ties,goals,points) values ('$nameSeason','$teamName','$matches','$wins','$loses','$ties','$goals','$points') ";
         $query=mysqli_query($connect,$mysql);
         $_SESSION['message']= "Record has been added";
-        $_SESSION['msg_type']="succes";
+        $_SESSION['msg_type']="success";
         header("location:dashboard.php"); 
     }
 
@@ -132,7 +132,7 @@
 
     if(isset($_POST['update-comments'])){
         $id_comment=$_POST['id-comment'];
-        $username_comment=$_POST['username-comment'];
+        $username_comment=$_POST['username-comments'];
         $comment=$_POST['comment'];
         $season_comment=$_POST['season-comment'];
         $connect->query("UPDATE comments set username='$username_comment', comment='$comment',

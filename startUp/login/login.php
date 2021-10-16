@@ -5,11 +5,14 @@
     <head>
         <meta charset="UTF-8">
         <title>Login</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     </head>
     
     <body>
         <?php require_once 'loginService.php'?>
+        
         <style> 
+        
             html{
                 height: 100%;
             }
@@ -17,7 +20,7 @@
             body{
                 height: 100%;
                 margin:0;
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: "Times New Roman";
                 display: grid;
                 justify-items: center;
                 background-color: #3a3a3a;
@@ -89,7 +92,7 @@
         <main id="main-holder">
             <?php if(isset($_SESSION['loginmessage'])):?>
 
-            <div class="alert laert-<?=$_SESSION['msg_type']?>">
+            <div class="alert alert-<?=$_SESSION['msg_type']?>" role="alert">
 
             <?php 
                 echo $_SESSION['loginmessage'];
@@ -117,7 +120,7 @@
             </form>
         </main>
 
-
+        
     </body>
 
 </html>

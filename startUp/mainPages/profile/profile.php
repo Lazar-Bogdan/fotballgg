@@ -142,7 +142,7 @@
                                             </a>
                                         <ul>';
                                             if($userStatus=="administrator"){
-                                                echo '<li><a href="../dashboard/dashboard.php">Dashboard</a></li>';
+                                                echo '<li><a href="../DASHBOARD/dashboard.php">Dashboard</a></li>';
                                             }
                                             echo '
                                             <li><a href="../profile/profile.php">Profile</a></li>
