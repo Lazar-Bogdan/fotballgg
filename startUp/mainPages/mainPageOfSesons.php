@@ -213,7 +213,7 @@
                     <div class="position">
                         
                         <button type="submit"class="button-style" name="bundesliga">Bundesliga</button>
-                        <button type="submit" class="button-style"name="2bundesliga">2Bundesliga</button>
+                        <button type="submit" class="button-style"name="2bundesliga">Bundesliga</button>
                     </div>
 
                 </div>
