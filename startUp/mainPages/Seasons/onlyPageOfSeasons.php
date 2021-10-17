@@ -183,6 +183,7 @@
                 html,
                 body {
                     height: 100%;
+                    font-family: "Times New Roman";
                 }
 
                 body {
@@ -217,9 +218,18 @@
                     height:450px;
                 }
                 
+                .welcome-season{
+                    color: white;
+                    font-family: "Times New Roman";
+                    width: auto;
+                }
+                
 
             </style>
-            <p> WELCOME to <?php echo $_SESSION['nameSeason'] ?> </p>
+            <div class="welcome-season">
+                <br>
+                WELCOME to <?php echo $_SESSION['nameSeason'] ?> </p>
+            </div>
             <div class="container-middlePage">
                 <div class="row">
                     <div class="column">
@@ -240,7 +250,6 @@
                                 <?php
                                     $connect = new mysqli('localhost','root','','user_database') or die ("unable to connect");
                                     $seasonName = $_SESSION['nameSeason'];
-                                    echo $seasonName;
                                     $result = mysqli_query($connect,"SELECT * from teams WHERE nameSeason='$seasonName' ORDER by points DESC");
                                     while($row = $result->fetch_assoc()) :
                                 ?>

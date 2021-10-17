@@ -97,7 +97,7 @@
 
                 * {
                     box-sizing: border-box;
-                    font-family: "Times New Roman";
+                    font-family: Ebrima;
                 }
                 
                 body {
