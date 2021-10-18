@@ -18,7 +18,9 @@
             </div>
 
             <div id="welcome-text">
-                Welcome!
+                <b>
+                    <font size="+3">Welcome!</font>
+                </b>
             </div>
 
             <form action="registerService.php" method="POST" id="register-form">

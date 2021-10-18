@@ -86,6 +86,7 @@
                 cursor: pointer;
                 outline: none;
             }
+
         </style>
 
 
@@ -103,7 +104,9 @@
             <?php endif?>
 
             <div id="welcome-text">
-                Welcome!
+                <b>
+                    <font size="+3">Welcome!</font>
+                </b>
             </div>
 
             <form action="loginService.php" method="POST" id="login-form">
