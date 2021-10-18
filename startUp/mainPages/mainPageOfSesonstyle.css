@@ -1,3 +1,80 @@
+* {
+    box-sizing: border-box;
+    font-family: "Times New Roman";
+}
+
+body {
+    margin: 0;
+    font-family: Helvetica;
+    background-image: linear-gradient(to left, #30cfd0 0%, #330867 100%);
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.content{
+width:auto;
+height:auto;
+}
+
+.Italy{
+width:auto;
+height:160px;
+
+}
+.five{
+width:auto;
+height:auto;
+background:blue;
+}
+
+.button-style{
+    width: 100px;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: #3a3a3a;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.position{
+    margin: auto;
+    width: 10%;
+    padding: 10px;
+}
+.text-pos{
+    color:white;
+    margin: auto;
+    width: 8%;
+    padding: 10px;
+}
+.text-pos-romania{
+    color:white;
+    margin: auto;
+    width: 8%;
+    padding: 10px;
+}
+.text-pos-france{
+    color:white;
+    margin: auto;
+    width: 8%;
+    padding: 10px;
+}
+.text-pos-germany{
+    color:white;
+    margin: auto;
+    width: 8%;
+    padding: 10px;
+}
+.text-pos-spain{
+    color:white;
+    margin: auto;
+    width: 8%;
+    padding: 10px;
+}
 header {
     background: #131313;
     height: 66px;
@@ -89,6 +166,52 @@ header .menu-toggle {
     color: #006669;
 }
 
+.popup {
+    width: 90px;
+    background-color: #141414;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 130px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
 
 .footer__container {
     background-color: #141414;
@@ -97,6 +220,7 @@ header .menu-toggle {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 #footer__logo {

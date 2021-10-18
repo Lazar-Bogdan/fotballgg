@@ -1,3 +1,10 @@
+body {
+margin: 0;
+background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+font-family: "Times New Roman";
+font-weight: 100;
+}
+
 header {
 background: #131313;
 height: 66px;
@@ -88,81 +95,6 @@ min-height: 100%;
 .page-wrapper a:hover {
 color: #006669;
 }
-
-* {
-    box-sizing: border-box;
-}
-
-/* Create two equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 100px; /* Should be removed. Only for demonstration */
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-html,
-body {
-    height: 100%;
-    font-family: "Times New Roman";
-}
-
-body {
-    margin: 0;
-    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-    font-family: sans-serif;
-    font-weight: 100;
-}
-
-table {
-    width: 800px;
-    overflow-y:scroll;
-    border-collapse: collapse;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-
-th,
-td {
-    padding: 15px;
-    background-color: rgba(255,255,255,0.2);
-    color: #fff;
-}
-
-th {
-    text-align: left;
-}
-
-.scrollbar {
-    overflow-y:scroll;
-    width: 900px;
-    height:450px;
-}
-
-.welcome-season{
-    color: white;
-    font-family: "Times New Roman";
-    width: auto;
-}
-
-input[type=text]{
-    width: 540px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-
 .footer__container {
     background-color: #141414;
     padding: 5rem 0;
@@ -170,6 +102,7 @@ input[type=text]{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 500px;
 }
 
 #footer__logo {
@@ -294,6 +227,44 @@ input[type=text]{
     }
 }
 
+.column {
+    background-image: linear-gradient(to top, #ffffff 0%, #ffffff 100%);
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+.card {
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+}
+
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+}
+
+.container {
+    padding: 0 16px;
+}
+
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: grey;
+}
+.credentials{
+    text-align: left;
+}
+
 .popup {
     width: 90px;
     background-color: #141414;
@@ -339,60 +310,4 @@ input[type=text]{
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
-}
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
-.column container {
-    width: 400px;
-    padding: 10px;
-}
-.container {
-    width: 400px;
-    padding: 10px;
-}
-
-.message-blue {
-    position: relative;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #A8DDFD;
-    width: 500px;
-    height: 100px;
-    text-align: left;
-    font: 400 .9em 'Open Sans', sans-serif;
-    border: 1px solid #97C6E3;
-    border-radius: 10px;
-}
-
-.message-content {
-    padding: 0;
-    margin: 0;
-}
-
-.table-comment{
-    
-    align-items: center;
-}
-
-.scrollit {
-    overflow-y:scroll;
-    width: 600px;
-    height:400px;
-}
-.commentSection{
-    width: 550px;
-    height:25px;
-}
-.button-comment{
-    height:25px;
-    width: auto;
-    padding: 7px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    background-color: #3a3a3a;
-    cursor: pointer;
-    outline: none;
 }

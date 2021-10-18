@@ -12,7 +12,6 @@
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="onlyPageOfSeasons.css">
     </head>
 
     
@@ -583,7 +582,7 @@
                     <section class="social__media">
                         <div class="social__media--wrap">
                             <div class="footer__logo">
-                                <a href="mainPageOfSesons.php" id="footer__logo"><i class="fas fa-futbol"></i>FOTBALGG</a>
+                                <a href="../mainPageOfSesons.php" id="footer__logo"><i class="fas fa-futbol"></i>FOTBALLGG</a>
                             </div>
                             <p class="website__rights">© FOTBALGG 2021. All rights reserved</p>
                             <div class="social__icons">

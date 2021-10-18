@@ -5,12 +5,13 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>You re profile</title>
+        <title>Settings</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
             integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
+        <link href="settings.css" rel="stylesheet">
     </head>
 
 
@@ -22,272 +23,7 @@
         ?>
 
         <style>
-            body {
-                margin: 0;
-                background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-                font-family: "Times New Roman";
-                font-weight: 100;
-            }
-
-            header {
-                background: #131313;
-                height: 66px;
-            }
-
-            header * {
-                color: white;
-            }
-
-            header .logo {
-                float: left;
-                height: inherit;
-                margin-left: 2em;
-            }
-
-            header .logo-text {
-                margin: 9px;
-                font-family: 'Candal', serif;
-            }
-
-            header .logo-text span {
-                color: #05f7ff;
-            }
-
-            header ul {
-                float: right;
-                margin: 0px;
-                padding: 0px;
-                list-style: none;
-            }
-
-            header ul li {
-                float: left;
-                position: relative;
-            }
-
-            header ul li ul {
-                position: absolute;
-                top: 66px;
-                right: 0px;
-                width: 180px;
-                display: none;
-                z-index: 88888;
-            }
-
-            header ul li:hover ul {
-                display: block;
-            }
-
-            header ul li ul li {
-                width: 100%;
-            }
-
-            header ul li ul li a {
-                padding: 10px;
-                background: white;
-                color: #444;
-            }
-
-            header ul li ul li a.logout {
-                color: red;
-            }
-
-            header ul li ul li a:hover {
-                background: #d5d6d6;
-            }
-
-            header ul li a {
-                display: block;
-                padding: 21px;
-                font-size: 1.1em;
-                text-decoration: none;
-            }
-
-            header ul li a:hover {
-                background: #006669;
-                transition: 0.5s;
-            }
-
-            header .menu-toggle {
-                display: none;
-            }
-
-            .page-wrapper {
-                min-height: 100%;
-            }
-
-            .page-wrapper a:hover {
-                color: #006669;
-            }
-            .footer__container {
-                    background-color: #141414;
-                    padding: 5rem 0;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    height: 500px;
-                }
-
-                #footer__logo {
-                    color: #fff;
-                    display: flex;
-                    align-items: center;
-                    cursor: pointer;
-                    text-decoration: none;
-                    font-size: 2rem;
-                }
-
-                .footer__links {
-                    width: 100%;
-                    max-width: 1000px;
-                    display: flex;
-                    justify-content: center;
-                }
-
-                .footer__link--wrapper {
-                    display: flex;
-                }
-
-                .footer__link--items {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    margin: 16px;
-                    text-align: left;
-                    width: 160px;
-                    box-sizing: border-box;
-                }
-
-                .footer__link--items h2 {
-                    margin-bottom: 16px;
-                }
-
-                .footer__link--items > h2 {
-                    color: #fff;
-                }
-
-                .footer__link--items a {
-                    color: #fff;
-                    text-decoration: none;
-                    margin-bottom: 0.5rem;
-                }
-
-                .footer__link--items a:hover {
-                    color: #e9e9e9;
-                    transition: 0.3s ease-out;
-                }
-
-                /* Social Icons */
-                .social__icon--link {
-                    color: #fff;
-                    font-size: 24px;
-                }
-
-                .social__media {
-                    max-width: 1000px;
-                    width: 100%;
-                }
-
-                .social__media--wrap {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    width: 90%;
-                    max-width: 1000px;
-                    margin: 40px auto 0 auto;
-                }
-
-                .social__icons {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    width: 240px;
-                }
-
-                .social__logo {
-                    color: #fff;
-                    justify-self: start;
-                    margin-left: 20px;
-                    cursor: pointer;
-                    text-decoration: none;
-                    font-size: 2rem;
-                    display: flex;
-                    align-items: center;
-                    margin-bottom: 16px;
-                }
-
-                .website__rights {
-                    color: #fff;
-                }
-
-                @media screen and (max-width: 820px) {
-                    .footer__links {
-                    padding-top: 2rem;
-                    }
-
-                    #footer__logo {
-                    margin-bottom: 2rem;
-                    }
-
-                    .website__rights {
-                    margin-bottom: 2rem;
-                    }
-
-                    .footer__link--wrapper {
-                    flex-direction: column;
-                    }
-
-                    .social__media--wrap {
-                    flex-direction: column;
-                    }
-                }
-
-                @media screen and (max-width: 480px) {
-                    .footer__link--items {
-                    margin: 0;
-                    padding: 10px;
-                    width: 100%;
-                    }
-                }
-
-                .column {
-                    background-image: linear-gradient(to top, #ffffff 0%, #ffffff 100%);
-                    float: left;
-                    width: 33.3%;
-                    margin-bottom: 16px;
-                    padding: 0 8px;
-                }
-
-                .card {
-                    text-align: center;
-                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-                    margin: 8px;
-                }
-
-                .about-section {
-                    padding: 50px;
-                    text-align: center;
-                    background-color: #474e5d;
-                    color: white;
-                }
-
-                .container {
-                    padding: 0 16px;
-                }
-
-                .container::after, .row::after {
-                    content: "";
-                    clear: both;
-                    display: table;
-                }
-
-                .title {
-                    color: grey;
-                }
-                .credentials{
-                    text-align: left;
-                }
+            
         </style>
 
         <form action="settingsService.php" method="POST">
@@ -346,6 +82,7 @@
                 </div>
                 <div class="column">
                     <div class="card">
+                        <img src="profilepic.jpg" alt="Jane" style="width:50%">
                         <div class="container">
                             <h1></h1>
                             <h2><?php echo $row['username']?></h2>
@@ -369,52 +106,7 @@
             </div>
 
             <style>
-                .popup {
-                    width: 90px;
-                    background-color: #141414;
-                    position: relative;
-                    display: inline-block;
-                    cursor: pointer;
-                    -webkit-user-select: none;
-                    -moz-user-select: none;
-                    -ms-user-select: none;
-                    user-select: none;
-                }
                 
-                /* The actual popup */
-                .popup .popuptext {
-                    visibility: hidden;
-                    width: 130px;
-                    background-color: #555;
-                    color: #fff;
-                    text-align: center;
-                    border-radius: 6px;
-                    padding: 8px 0;
-                    position: absolute;
-                    z-index: 1;
-                    bottom: 125%;
-                    left: 50%;
-                    margin-left: -80px;
-                }
-                
-                /* Popup arrow */
-                .popup .popuptext::after {
-                    content: "";
-                    position: absolute;
-                    top: 100%;
-                    left: 50%;
-                    margin-left: -5px;
-                    border-width: 5px;
-                    border-style: solid;
-                    border-color: #555 transparent transparent transparent;
-                }
-                
-                /* Toggle this class - hide and show the popup */
-                .popup .show {
-                    visibility: visible;
-                    -webkit-animation: fadeIn 1s;
-                    animation: fadeIn 1s;
-                }
             </style>
 
             <div class="footer__container">
@@ -453,7 +145,7 @@
                     <section class="social__media">
                         <div class="social__media--wrap">
                             <div class="footer__logo">
-                                <a href="mainPageOfSesons.php" id="footer__logo"><i class="fas fa-futbol"></i>FOTBALGG</a>
+                                <a href="../mainPageOfSesons.php" id="footer__logo"><i class="fas fa-futbol"></i>FOTBALLGG</a>
                             </div>
                             <p class="website__rights">© FOTBALGG 2021. All rights reserved</p>
                             <div class="social__icons">

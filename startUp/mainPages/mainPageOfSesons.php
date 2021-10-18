@@ -6,46 +6,12 @@
         <meta charset="UTF-8">
         <title>MainPageOfSeasons</title>
         <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
-
-    <style type="text/css">
-    .overlay {
-        background: #999;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        opacity: 0.95;
-        filter: alpha(opacity=95);
-        z-index: 1;
-    }
-    .popup {
-        background: #fff;
-        border: 2px solid #333;
-        border-radius: 5px;
-        padding: 10px;
-        position: absolute;
-        z-index: 1000;
-    }
-    .popup img {
-        display: block;
-        margin-bottom: 15px;
-    }
-    .popup div.action {
-        text-align: right;
-    }
-    .popup div.action input {
-        background: red;
-        color: white;
-        border: red;
-    }
-    </style>
-</head>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
+    </head>
 
     <body>
         <link rel="stylesheet" type="text/css" href="mainPageOfSesonstyle.css">
@@ -194,6 +160,8 @@
                     <div class="position">
                         
                         <button type="submit"class="button-style" name="liga1">LIGA 1</button>
+                    </div>
+                    <div class="position">
                         <button type="submit"class="button-style" name="liga2">LIGA 2</button>
                     </div>
 
@@ -205,6 +173,8 @@
                     <div class="position">
                         
                         <button type="submit" class="button-style"name="ligue1">LIGUE 1</button>
+                    </div>
+                    <div class="position">
                         <button type="submit"class="button-style" name="ligue2">LIGUE 2</button>
                     </div>
 
@@ -216,6 +186,8 @@
                     <div class="position">
                         
                         <button type="submit"class="button-style" name="bundesliga">Bundesliga</button>
+                    </div>
+                    <div class="position">
                         <button type="submit" class="button-style"name="2bundesliga">2Bundesliga</button>
                     </div>
 
@@ -227,8 +199,11 @@
                     <div class="position">
                         
                         <button type="submit"class="button-style" name="laliga">La liga</button>
-                        <button type="submit" class="button-style"name="segundaDivision">LaLiga2</button>
+                        
                     </div>
+                    <div class="position">
+                        <button type="submit" class="button-style"name="segundaDivision">LaLiga2</button>
+                    </div> 
 
                 </div>
             </div>
