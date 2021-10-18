@@ -359,7 +359,7 @@
                                 echo '<input type="text" name="addComment" class="commentSection" placeholder="Add comment">';
                                 echo '<button type="submit" class="button-comment" name="comment">Comment</button>';
                             }else{
-                                echo 'For adding a comment, please register/login';
+                                echo '<b>For adding a comment, please register/login</b>';
                             }
                         ?> 
                     </div>
@@ -553,13 +553,13 @@
                             <h2>About Us</h2>
                                 <div class="popup" onclick="HowWork()">
                                     <a>How it works</a><span class="popuptext" id="HowWorks">Here you can find information about you're favorite team ! 
-                                        If you are a guest, feel free to go through pages. If you are a users, don't forget to leave a commentary. Finally if
+                                        If you are a guest, feel free to go through pages. If you are a users, don't forget to leave a comment. Finally if
                                         you are a administrator, you are the boss!
                                     </span>
                                 </div>
                                 <div class="popup" onclick="TermsFunction()">  
                                 <a>Terms of Service</a><span class="popuptext" id="Terms">We all know that if you are already a user 
-                                    you should know about this. But, for everyone, do not spam on the commentary section, do not insult other users. If 
+                                    you should know about this. But, for everyone, do not spam on the comment section, do not insult other users. If 
                                     things like this happens, you're account will be deleted
                                 </span>
                                 </div>
