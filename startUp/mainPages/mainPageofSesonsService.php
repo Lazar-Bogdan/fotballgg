@@ -55,7 +55,7 @@
             header("location:Seasons/onlyPageOfSeasons.php");
         }
         if(isset($_POST['2bundesliga'])){
-            $_SESSION['nameSeason']="2.Bundesliga";
+            $_SESSION['nameSeason']="2Bundesliga";
             header("location:Seasons/onlyPageOfSeasons.php");
         }
         if(isset($_POST['laliga'])){
@@ -63,7 +63,7 @@
             header("location:Seasons/onlyPageOfSeasons.php");
         }
         if(isset($_POST['segundaDivision'])){
-            $_SESSION['nameSeason']="Segunda Division";
+            $_SESSION['nameSeason']="LaLiga2";
             header("location:Seasons/onlyPageOfSeasons.php");
         }
     }

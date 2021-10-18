@@ -29,8 +29,8 @@
     <?php endif ?>
     <div class="tablink-self">DASHBOARD</div>
 
-    <button class="tablink" onclick="openPage('Teams', this, 'red')">Teams</button>
-    <button class="tablink" onclick="openPage('Users', this, 'green')" id="defaultOpen">Users</button>
+    <button class="tablink" onclick="openPage('Teams', this, 'red')"id="defaultOpen">Teams</button>
+    <button class="tablink" onclick="openPage('Users', this, 'green')" >Users</button>
     <button class="tablink" onclick="openPage('Comments', this, 'blue')">Comments</button>
     <?php session_start() ?>
     <form method="POST" action="dashboardService.php">

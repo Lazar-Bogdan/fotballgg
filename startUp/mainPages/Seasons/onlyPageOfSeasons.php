@@ -224,11 +224,20 @@
                     width: auto;
                 }
                 
+                input[type=text]{
+                    width: 540px;
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                }
 
             </style>
             <div class="welcome-season">
                 <br>
-                WELCOME to <?php echo $_SESSION['nameSeason'] ?> </p>
+                <b>WELCOME to <?php echo $_SESSION['nameSeason'] ?> </b></p>
             </div>
             <div class="container-middlePage">
                 <div class="row">
@@ -315,6 +324,15 @@
                             }
                             .button-comment{
                                 height:25px;
+                                width: auto;
+                                padding: 7px;
+                                border: none;
+                                border-radius: 5px;
+                                color: white;
+                                font-weight: bold;
+                                background-color: #3a3a3a;
+                                cursor: pointer;
+                                outline: none;
                             }
                         </style>
 
@@ -339,7 +357,7 @@
                             $result=mysqli_query($mysqli,"SELECT * from users WHERE username='$username'");
                             $row = $result->fetch_assoc();
                             if($row['functie']=="user" || $row['functie']=="administrator"){
-                                echo '<input type="text" name="addComment" class="commentSection" placeholder="add comment">';
+                                echo '<input type="text" name="addComment" class="commentSection" placeholder="Add comment">';
                                 echo '<button type="submit" class="button-comment" name="comment">Comment</button>';
                             }else{
                                 echo 'For adding a comment, please register/login';

@@ -5,10 +5,12 @@
     <head>
         <meta charset="UTF-8">
         <title>Register</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="registerstyle.css">
+
     </head>
 
     <body>
-        <link rel="stylesheet" href="registerstyle.css">
 
         <main id="main-holder">
             <div id="register-error-msg-holder">
@@ -36,7 +38,7 @@
 
                 </div>
                 <p></p>
-                <button type="submit" name="register" class="button-style">register</button>
+                <button type="submit" name="register" class="button-style">Register</button>
                 <p></p>
                 <button type="submit" name="login" class="button-style">Go To Login</button>
 

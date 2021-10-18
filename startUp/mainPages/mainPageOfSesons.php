@@ -115,7 +115,7 @@
 
                 .Italy{
                 width:auto;
-                height:130px;
+                height:160px;
                
                 }
                 .five{
@@ -125,7 +125,7 @@
                 }
 
                 .button-style{
-                    width: auto;
+                    width: 100px;
                     padding: 7px;
                     border: none;
                     border-radius: 5px;
@@ -134,6 +134,7 @@
                     background-color: #3a3a3a;
                     cursor: pointer;
                     outline: none;
+
                 }
 
                 .position{
@@ -180,6 +181,8 @@
                     </div>
                     <div class="position">
                         <button type="submit" class="button-style" name="seriea">SERIE A</button>
+                    </div>
+                    <div class="position">
                         <button type="submit"class="button-style" name="serieb">SERIE B</button>
                     </div>
 
@@ -213,7 +216,7 @@
                     <div class="position">
                         
                         <button type="submit"class="button-style" name="bundesliga">Bundesliga</button>
-                        <button type="submit" class="button-style"name="2bundesliga">Bundesliga</button>
+                        <button type="submit" class="button-style"name="2bundesliga">2Bundesliga</button>
                     </div>
 
                 </div>
@@ -224,7 +227,7 @@
                     <div class="position">
                         
                         <button type="submit"class="button-style" name="laliga">La liga</button>
-                        <button type="submit" class="button-style"name="segundaDivision">Segunda Division</button>
+                        <button type="submit" class="button-style"name="segundaDivision">LaLiga2</button>
                     </div>
 
                 </div>
